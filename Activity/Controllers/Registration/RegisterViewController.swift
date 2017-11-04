@@ -21,9 +21,6 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initiateUIComponentsView()
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector (self.doneBarButtonItemClicked(sender:)))
-        
-        self.navigationItem.setRightBarButton(doneButton, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -44,8 +41,9 @@ class RegisterViewController: UIViewController {
     //MARK: - Helper Functions
     func initiateUIComponentsView () {
         self.title = "Sign up"
+        registrationTableView.register(UINib(nibName: "RegistrationInputTableViewCell", bundle: nil), forCellReuseIdentifier: "inputInfoCell")
         addTabGestureToTableView()
-        //addDoneNavigationBarItem()
+        addJoinNavigationBarItem()
     }
     
     func addTabGestureToTableView () {
@@ -53,8 +51,9 @@ class RegisterViewController: UIViewController {
         registrationTableView.addGestureRecognizer(tapGesture)
     }
     
-    func addDoneNavigationBarItem () {
-
+    func addJoinNavigationBarItem () {
+        let JoinButton = UIBarButtonItem(title: "JOIN" ,style: .plain, target: self, action: #selector (self.doneBarButtonItemClicked(sender:)))
+        self.navigationItem.setRightBarButton(JoinButton, animated: true)
     }
     
     //MARK: - Actions Functions
