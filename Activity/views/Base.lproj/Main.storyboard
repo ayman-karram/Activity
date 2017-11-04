@@ -1,24 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dho-Ac-E9H">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Landing Page View Controller-->
+        <scene sceneID="fdI-GL-E6K">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController storyboardIdentifier="LandingPageViewController" id="Dho-Ac-E9H" customClass="LandingPageViewController" customModule="Activity" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xz3-De-94M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LandingPageBG" translatesAutoresizingMaskIntoConstraints="NO" id="ZkB-ui-OOz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Have fun, be active." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBz-gw-eDD">
+                                <rect key="frame" x="42" y="503" width="291" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Lw2-xs-GWs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="59" translatesAutoresizingMaskIntoConstraints="NO" id="CL0-3x-F63">
+                                <rect key="frame" x="42" y="583.5" width="291" height="38"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1N-eg-xEG">
+                                        <rect key="frame" x="0.0" y="0.0" width="116" height="38"/>
+                                        <color key="backgroundColor" red="0.91344821453094482" green="0.53054463863372803" blue="0.24539121985435486" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="lx1-2Q-5wp"/>
+                                        </constraints>
+                                        <state key="normal" title="Register">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="registerButtonClicked:" destination="Dho-Ac-E9H" eventType="touchUpInside" id="I22-Ab-uCh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NuJ-vb-B41">
+                                        <rect key="frame" x="175" y="0.0" width="116" height="38"/>
+                                        <state key="normal" title="Sign in">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signInButtonClicked:" destination="Dho-Ac-E9H" eventType="touchUpInside" id="Qh7-ZU-wXK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="W1N-eg-xEG" firstAttribute="height" secondItem="NuJ-vb-B41" secondAttribute="height" id="JgG-J1-BG5"/>
+                                    <constraint firstItem="W1N-eg-xEG" firstAttribute="width" secondItem="NuJ-vb-B41" secondAttribute="width" id="qfU-Sr-y3D"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZkB-ui-OOz" firstAttribute="trailing" secondItem="d3G-oB-wGL" secondAttribute="trailing" id="2Nb-Bn-Tm6"/>
+                            <constraint firstItem="ZkB-ui-OOz" firstAttribute="top" secondItem="xz3-De-94M" secondAttribute="top" id="4nL-Js-8dC"/>
+                            <constraint firstItem="ZkB-ui-OOz" firstAttribute="trailing" secondItem="d3G-oB-wGL" secondAttribute="trailing" id="6kR-w8-kjQ"/>
+                            <constraint firstItem="d3G-oB-wGL" firstAttribute="bottom" secondItem="CL0-3x-F63" secondAttribute="bottom" constant="45.5" id="8aa-pg-UKS"/>
+                            <constraint firstItem="d3G-oB-wGL" firstAttribute="trailing" secondItem="CBz-gw-eDD" secondAttribute="trailing" constant="42" id="Bns-Yc-7bV"/>
+                            <constraint firstItem="CL0-3x-F63" firstAttribute="top" secondItem="CBz-gw-eDD" secondAttribute="bottom" constant="59.5" id="C57-dj-l64"/>
+                            <constraint firstItem="ZkB-ui-OOz" firstAttribute="leading" secondItem="d3G-oB-wGL" secondAttribute="leading" id="CGo-5i-gKN"/>
+                            <constraint firstItem="ZkB-ui-OOz" firstAttribute="bottom" secondItem="d3G-oB-wGL" secondAttribute="bottom" id="H8K-Sw-bIY"/>
+                            <constraint firstItem="CL0-3x-F63" firstAttribute="centerX" secondItem="xz3-De-94M" secondAttribute="centerX" id="Pdb-zE-m1O"/>
+                            <constraint firstItem="ZkB-ui-OOz" firstAttribute="bottom" secondItem="d3G-oB-wGL" secondAttribute="bottom" id="UH3-yv-PMi"/>
+                            <constraint firstItem="d3G-oB-wGL" firstAttribute="trailing" secondItem="CL0-3x-F63" secondAttribute="trailing" constant="42" id="blw-Wu-Rzm"/>
+                            <constraint firstItem="ZkB-ui-OOz" firstAttribute="leading" secondItem="d3G-oB-wGL" secondAttribute="leading" id="h2A-Ep-QG5"/>
+                            <constraint firstItem="ZkB-ui-OOz" firstAttribute="top" secondItem="xz3-De-94M" secondAttribute="top" id="mc3-E3-Xg3"/>
+                            <constraint firstItem="CBz-gw-eDD" firstAttribute="leading" secondItem="d3G-oB-wGL" secondAttribute="leading" constant="42" id="tYf-s2-PrJ"/>
+                            <constraint firstItem="CL0-3x-F63" firstAttribute="leading" secondItem="d3G-oB-wGL" secondAttribute="leading" constant="42" id="vnz-Bz-iwB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="d3G-oB-wGL"/>
                     </view>
+                    <navigationItem key="navigationItem" id="I4F-S6-kp9"/>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="ZkB-ui-OOz" id="TRN-4g-ji5"/>
+                        <outlet property="registerButton" destination="W1N-eg-xEG" id="Ilh-bp-E3E"/>
+                        <outlet property="singInButton" destination="NuJ-vb-B41" id="PVF-fT-uey"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cZu-eK-yt5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="200.80000000000001" y="129.98500749625188"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LandingPageBG" width="621" height="1104"/>
+    </resources>
 </document>
