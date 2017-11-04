@@ -52,13 +52,25 @@ class RegisterViewController: UIViewController {
         self.navigationItem.setRightBarButton(JoinButton, animated: true)
     }
     
+
     //MARK: - Actions Functions
     @objc func dismissKeyboard() {
         self.view.endEditing(true)
     }
     
     @objc func doneBarButtonItemClicked (sender : Any) {
-        
+     
+        let validation = VaildationManager.isUserRegistarionDataIsVaild(registrationTableView: registrationTableView)
+        if validation.0 {
+            let userInfo = validation.2
+            print(userInfo!.firstName)
+            
+        }
+        else
+        {
+            let alert = AlertManager.getAlerWithTitle(title: "Notes", message: validation.1)
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
 }
