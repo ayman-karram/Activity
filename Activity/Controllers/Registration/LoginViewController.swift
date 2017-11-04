@@ -1,21 +1,20 @@
 //
-//  RegisterViewController.swift
+//  LoginViewController.swift
 //  Activity
 //
 //  Created by Ayman  on 11/4/17.
 //  Copyright © 2017 Ayman . All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-class RegisterViewController: UIViewController {
+class LoginViewController: UIViewController {
     
     //MARK: - Properties
     @IBOutlet weak var registrationTableView: UITableView!
-
-    var fieldsTitlesList       = ["First Name", "Last Name", "Email", "Password", "Birthdate"]
-    var fieldsPlaceHoldersList = ["First" , "Last" , "your@email.com" , "Password", "Birthdate"]
+    
+    var fieldsTitlesList       = ["Email", "Password", "Birthdate"]
+    var fieldsPlaceHoldersList = ["your@email.com" , "Password"]
     
     //MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -33,17 +32,17 @@ class RegisterViewController: UIViewController {
     }
     
     //MARK: - Instantiation
-    class func instantiateFromStoryboard() -> RegisterViewController {
+    class func instantiateFromStoryboard() -> LoginViewController {
         let storyboard = UIStoryboard(name: "Registration", bundle: nil)
-        return storyboard.instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
+        return storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
     }
     
     //MARK: - Helper Functions
     func initiateUIComponentsView () {
-        self.title = "Sign up"
+        self.title = "Log in"
         registrationTableView.register(UINib(nibName: "RegistrationInputTableViewCell", bundle: nil), forCellReuseIdentifier: "inputInfoCell")
         addTabGestureToTableView()
-        addJoinNavigationBarItem()
+        addDoneNavigationBarItem()
     }
     
     func addTabGestureToTableView () {
@@ -51,9 +50,9 @@ class RegisterViewController: UIViewController {
         registrationTableView.addGestureRecognizer(tapGesture)
     }
     
-    func addJoinNavigationBarItem () {
-        let JoinButton = UIBarButtonItem(title: "JOIN" ,style: .plain, target: self, action: #selector (self.doneBarButtonItemClicked(sender:)))
-        self.navigationItem.setRightBarButton(JoinButton, animated: true)
+    func addDoneNavigationBarItem () {
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.doneBarButtonItemClicked))
+        self.navigationItem.setRightBarButton(doneButton, animated: true)
     }
     
     //MARK: - Actions Functions
@@ -68,41 +67,22 @@ class RegisterViewController: UIViewController {
 }
 
 //MARK: - UITableViewDelegate, UITableViewDataSource
-extension RegisterViewController : UITableViewDelegate , UITableViewDataSource {
+extension LoginViewController : UITableViewDelegate , UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return 2 // first, last name
-        case 1:
-            return 3 // email, password, birthday
-        default:
-            return 0
-        }
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "inputInfoCell") as! RegistrationInputTableViewCell
         
-        var inputTitle = ""
-        var inputPlaceHolder = ""
-        switch indexPath.section {
-        case 0:
-            inputTitle = self.fieldsTitlesList[indexPath.row]
-            inputPlaceHolder = self.fieldsPlaceHoldersList[indexPath.row]
-            break
-        case 1:
-            inputTitle = self.fieldsTitlesList[indexPath.row + 2]
-            inputPlaceHolder = self.fieldsPlaceHoldersList[indexPath.row + 2]
-            break
-        default:
-            break
-        }
+        let  inputTitle = self.fieldsTitlesList[indexPath.row]
+        let  inputPlaceHolder = self.fieldsPlaceHoldersList[indexPath.row]
         
         cell.setUpCellWithInput(title: inputTitle, placeHolder: inputPlaceHolder)
         

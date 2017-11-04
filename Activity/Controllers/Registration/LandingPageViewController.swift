@@ -54,8 +54,14 @@ class LandingPageViewController: UIViewController {
         self.navigationController?.pushViewController(registrationVC, animated: true)
     }
     
+    func pushLoginViewController () {
+        let loginVC = LoginViewController.instantiateFromStoryboard()
+        self.navigationController?.pushViewController(loginVC, animated: true)
+    }
+    
     //MARK: - Actions
     @IBAction func signInButtonClicked(_ sender: Any) {
+        self.pushLoginViewController()
     }
     
     @IBAction func registerButtonClicked(_ sender: Any) {
