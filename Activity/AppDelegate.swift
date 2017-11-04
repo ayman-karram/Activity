@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        self.initiateUIComponentsView()
+        self.initiateVariables()
         return true
     }
 
@@ -42,5 +44,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    //MARK: - Helper Functions
+    func initiateUIComponentsView () {
+        UINavigationBar.appearance().titleTextAttributes = [
+            NSAttributedStringKey.font: UIFont(name: NAVIAGTIONBARTITLENAME, size: NAVIAGTIONBARTITLEFONTSIZE)!,
+            NSAttributedStringKey.strokeColor : NAVIAGTIONBARTITLECOLOR
+        ]
+    }
+    
+    func initiateVariables () {
+        IQKeyboardManager.sharedManager().enable = true
+    }
 }
 
