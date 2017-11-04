@@ -26,15 +26,32 @@ class LandingPageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        super.viewWillDisappear(animated)
+    }
+    
     //MARK: - Helper Functions
     func initiateUIComponentsView () {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.singInButton.layer.cornerRadius  = BUTTONSCORNERRADIUS
         self.singInButton.layer.masksToBounds = true
         self.singInButton.layer.borderColor   = UIColor.white.cgColor
         self.singInButton.layer.borderWidth   = BUTTONSBORDERSWIDTH
         self.registerButton.layer.cornerRadius  = BUTTONSCORNERRADIUS
         self.registerButton.layer.masksToBounds = true
-        
+        let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: navigationController, action: nil)
+        navigationItem.backBarButtonItem = backButton
+    }
+    
+    func pushRegistrationViewController () {
+        let registrationVC = RegisterViewController.instantiateFromStoryboard()
+        self.navigationController?.pushViewController(registrationVC, animated: true)
     }
     
     //MARK: - Actions
@@ -42,6 +59,7 @@ class LandingPageViewController: UIViewController {
     }
     
     @IBAction func registerButtonClicked(_ sender: Any) {
+        self.pushRegistrationViewController()
     }
     
 }
