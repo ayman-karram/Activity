@@ -6,7 +6,8 @@ target 'Activity' do
   use_frameworks!
 
     pod 'IQKeyboardManagerSwift'
-
+    pod 'RealmSwift'
+    
   target 'ActivityTests' do
     inherit! :search_paths
 
