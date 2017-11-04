@@ -8,12 +8,13 @@
 
 import Foundation
 import UIKit
+import DatePickerDialog
 
 class RegisterViewController: UIViewController {
     
     //MARK: - Properties
     @IBOutlet weak var registrationTableView: UITableView!
-
+    
     var fieldsTitlesList       = ["First Name", "Last Name", "Email", "Password", "Birthdate"]
     var fieldsPlaceHoldersList = ["First" , "Last" , "your@email.com" , "Password", "Birthdate"]
     
@@ -27,7 +28,7 @@ class RegisterViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     //MARK: - Instantiation
     class func instantiateFromStoryboard() -> RegisterViewController {
         let storyboard = UIStoryboard(name: "Registration", bundle: nil)
@@ -38,13 +39,7 @@ class RegisterViewController: UIViewController {
     func initiateUIComponentsView () {
         self.title = "Sign up"
         registrationTableView.register(UINib(nibName: "RegistrationInputTableViewCell", bundle: nil), forCellReuseIdentifier: "inputInfoCell")
-        addTabGestureToTableView()
         addJoinNavigationBarItem()
-    }
-    
-    func addTabGestureToTableView () {
-        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action:#selector (self.dismissKeyboard))
-        registrationTableView.addGestureRecognizer(tapGesture)
     }
     
     func addJoinNavigationBarItem () {
@@ -52,19 +47,37 @@ class RegisterViewController: UIViewController {
         self.navigationItem.setRightBarButton(JoinButton, animated: true)
     }
     
-
+    func showDatePickerView () {
+        
+        DatePickerDialog().show("Birthdate", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", datePickerMode: .date) {
+            (date) -> Void in
+            if let dt = date {
+                let formatter = DateFormatter()
+                formatter.dateFormat = "MM/dd/yyyy"
+                
+                var registrationCell : RegistrationInputTableViewCell?
+                var indexPath : IndexPath?
+                
+                indexPath = IndexPath(row: 2, section: 1)
+                registrationCell = self.registrationTableView.cellForRow(at: indexPath!) as? RegistrationInputTableViewCell
+                registrationCell?.inputValueTextField.text = formatter.string(from: dt)
+            }
+        }
+        
+    }
+    
     //MARK: - Actions Functions
     @objc func dismissKeyboard() {
         self.view.endEditing(true)
     }
     
     @objc func doneBarButtonItemClicked (sender : Any) {
-     
+        
         let validation = VaildationManager.isUserRegistarionDataIsVaild(registrationTableView: registrationTableView)
+        
         if validation.0 {
-            let userInfo = validation.2
-            print(userInfo!.firstName)
-            
+            let userModel = validation.2
+            DataBaseManager.sharedInstance.saveUser(user : userModel!)
         }
         else
         {
@@ -107,6 +120,9 @@ extension RegisterViewController : UITableViewDelegate , UITableViewDataSource {
         case 1:
             inputTitle = self.fieldsTitlesList[indexPath.row + 2]
             inputPlaceHolder = self.fieldsPlaceHoldersList[indexPath.row + 2]
+            if indexPath.row == 2  { // Birthday
+                cell.inputValueTextField.isEnabled = false
+            }
             break
         default:
             break
@@ -115,5 +131,11 @@ extension RegisterViewController : UITableViewDelegate , UITableViewDataSource {
         cell.setUpCellWithInput(title: inputTitle, placeHolder: inputPlaceHolder)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 && indexPath.row == 2 { // Birthday
+            self.showDatePickerView()
+        }
     }
 }

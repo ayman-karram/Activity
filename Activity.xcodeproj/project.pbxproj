@@ -172,7 +172,6 @@
 			children = (
 				D30A95EF1FAE276300BED0EF /* DataBaseManager.swift */,
 				D30A95ED1FAE26C600BED0EF /* RealmManager.swift */,
-				D30A95F11FAE330500BED0EF /* VaildationManager.swift */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -271,6 +270,7 @@
 			children = (
 				D30A95E91FAE233C00BED0EF /* DataBase */,
 				D3A35CA21FAE43EC00BA5BBE /* AlertManager.swift */,
+				D30A95F11FAE330500BED0EF /* VaildationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -490,12 +490,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Activity/Pods-Activity-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DatePickerDialog/DatePickerDialog.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DatePickerDialog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
