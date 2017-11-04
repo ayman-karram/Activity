@@ -12,3 +12,6 @@ import UIKit
 //MARK: UI Constants
 let BUTTONSCORNERRADIUS :CGFloat  = 4
 let BUTTONSBORDERSWIDTH :CGFloat   = 1
+let NAVIAGTIONBARTITLECOLOR = UIColor(red: 51, green: 51, blue: 51, alpha: 1)
+let NAVIAGTIONBARTITLENAME = "HelveticaNeue"
+let NAVIAGTIONBARTITLEFONTSIZE : CGFloat = 15
