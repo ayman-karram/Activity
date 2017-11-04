@@ -7,7 +7,25 @@
 		<key>Activity.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>4</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>D347422F1FADC0F90055EFBF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D34742431FADC0F90055EFBF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D347424E1FADC0F90055EFBF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
