@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yp1-51-YG8">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,29 +20,29 @@
             <objects>
                 <viewController storyboardIdentifier="LandingPageViewController" id="Dho-Ac-E9H" customClass="LandingPageViewController" customModule="Activity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xz3-De-94M">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LandingPageBG" translatesAutoresizingMaskIntoConstraints="NO" id="ZkB-ui-OOz">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Have fun, be active." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBz-gw-eDD">
-                                <rect key="frame" x="42" y="503" width="291" height="21"/>
+                                <rect key="frame" x="42" y="572" width="330" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Lw2-xs-GWs"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="59" translatesAutoresizingMaskIntoConstraints="NO" id="CL0-3x-F63">
-                                <rect key="frame" x="42" y="583.5" width="291" height="38"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dKI-fy-XKf">
+                                <rect key="frame" x="32" y="648" width="349" height="42"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1N-eg-xEG">
-                                        <rect key="frame" x="0.0" y="0.0" width="116" height="38"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="164.66666666666666" height="42"/>
                                         <color key="backgroundColor" red="0.91344821453094482" green="0.53054463863372803" blue="0.24539121985435486" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="38" id="lx1-2Q-5wp"/>
+                                            <constraint firstAttribute="height" constant="42" id="8Mf-Ys-ZiJ"/>
                                         </constraints>
                                         <state key="normal" title="Register">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -52,7 +52,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NuJ-vb-B41">
-                                        <rect key="frame" x="175" y="0.0" width="116" height="38"/>
+                                        <rect key="frame" x="184.66666666666663" y="0.0" width="164.33333333333337" height="42"/>
                                         <state key="normal" title="Sign in">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -62,8 +62,8 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="W1N-eg-xEG" firstAttribute="height" secondItem="NuJ-vb-B41" secondAttribute="height" id="JgG-J1-BG5"/>
-                                    <constraint firstItem="W1N-eg-xEG" firstAttribute="width" secondItem="NuJ-vb-B41" secondAttribute="width" id="qfU-Sr-y3D"/>
+                                    <constraint firstItem="W1N-eg-xEG" firstAttribute="width" secondItem="NuJ-vb-B41" secondAttribute="width" id="4wX-TT-GzD"/>
+                                    <constraint firstItem="W1N-eg-xEG" firstAttribute="height" secondItem="NuJ-vb-B41" secondAttribute="height" id="sk9-x2-nZm"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -72,18 +72,18 @@
                             <constraint firstItem="ZkB-ui-OOz" firstAttribute="trailing" secondItem="d3G-oB-wGL" secondAttribute="trailing" id="2Nb-Bn-Tm6"/>
                             <constraint firstItem="ZkB-ui-OOz" firstAttribute="top" secondItem="xz3-De-94M" secondAttribute="top" id="4nL-Js-8dC"/>
                             <constraint firstItem="ZkB-ui-OOz" firstAttribute="trailing" secondItem="d3G-oB-wGL" secondAttribute="trailing" id="6kR-w8-kjQ"/>
-                            <constraint firstItem="d3G-oB-wGL" firstAttribute="bottom" secondItem="CL0-3x-F63" secondAttribute="bottom" constant="45.5" id="8aa-pg-UKS"/>
                             <constraint firstItem="d3G-oB-wGL" firstAttribute="trailing" secondItem="CBz-gw-eDD" secondAttribute="trailing" constant="42" id="Bns-Yc-7bV"/>
-                            <constraint firstItem="CL0-3x-F63" firstAttribute="top" secondItem="CBz-gw-eDD" secondAttribute="bottom" constant="59.5" id="C57-dj-l64"/>
                             <constraint firstItem="ZkB-ui-OOz" firstAttribute="leading" secondItem="d3G-oB-wGL" secondAttribute="leading" id="CGo-5i-gKN"/>
+                            <constraint firstItem="d3G-oB-wGL" firstAttribute="bottom" secondItem="dKI-fy-XKf" secondAttribute="bottom" constant="46" id="Glf-7I-SOy"/>
                             <constraint firstItem="ZkB-ui-OOz" firstAttribute="bottom" secondItem="d3G-oB-wGL" secondAttribute="bottom" id="H8K-Sw-bIY"/>
-                            <constraint firstItem="CL0-3x-F63" firstAttribute="centerX" secondItem="xz3-De-94M" secondAttribute="centerX" id="Pdb-zE-m1O"/>
+                            <constraint firstItem="dKI-fy-XKf" firstAttribute="leading" secondItem="d3G-oB-wGL" secondAttribute="leading" constant="32" id="QBA-FF-yeX"/>
+                            <constraint firstItem="dKI-fy-XKf" firstAttribute="top" secondItem="CBz-gw-eDD" secondAttribute="bottom" constant="55" id="QPk-tT-An6"/>
                             <constraint firstItem="ZkB-ui-OOz" firstAttribute="bottom" secondItem="d3G-oB-wGL" secondAttribute="bottom" id="UH3-yv-PMi"/>
-                            <constraint firstItem="d3G-oB-wGL" firstAttribute="trailing" secondItem="CL0-3x-F63" secondAttribute="trailing" constant="42" id="blw-Wu-Rzm"/>
+                            <constraint firstItem="d3G-oB-wGL" firstAttribute="trailing" secondItem="dKI-fy-XKf" secondAttribute="trailing" constant="33" id="ZeC-bC-dtC"/>
                             <constraint firstItem="ZkB-ui-OOz" firstAttribute="leading" secondItem="d3G-oB-wGL" secondAttribute="leading" id="h2A-Ep-QG5"/>
                             <constraint firstItem="ZkB-ui-OOz" firstAttribute="top" secondItem="xz3-De-94M" secondAttribute="top" id="mc3-E3-Xg3"/>
                             <constraint firstItem="CBz-gw-eDD" firstAttribute="leading" secondItem="d3G-oB-wGL" secondAttribute="leading" constant="42" id="tYf-s2-PrJ"/>
-                            <constraint firstItem="CL0-3x-F63" firstAttribute="leading" secondItem="d3G-oB-wGL" secondAttribute="leading" constant="42" id="vnz-Bz-iwB"/>
+                            <constraint firstItem="dKI-fy-XKf" firstAttribute="centerX" secondItem="xz3-De-94M" secondAttribute="centerX" id="tzB-SG-jn4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="d3G-oB-wGL"/>
                     </view>
@@ -104,7 +104,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yp1-51-YG8" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EGF-bM-dom">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -118,6 +118,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LandingPageBG" width="621" height="1104"/>
+        <image name="LandingPageBG" width="414" height="736"/>
     </resources>
 </document>
