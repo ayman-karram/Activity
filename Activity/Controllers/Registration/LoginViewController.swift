@@ -13,7 +13,7 @@ class LoginViewController: UIViewController {
     //MARK: - Properties
     @IBOutlet weak var registrationTableView: UITableView!
     
-    var fieldsTitlesList       = ["Email", "Password", "Birthdate"]
+    var fieldsTitlesList       = ["Email", "Password"]
     var fieldsPlaceHoldersList = ["your@email.com" , "Password"]
     
     //MARK: - View Life Cycle
@@ -25,10 +25,6 @@ class LoginViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
     }
     
     //MARK: - Instantiation
