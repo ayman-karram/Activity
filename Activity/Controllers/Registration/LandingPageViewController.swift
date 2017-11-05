@@ -15,10 +15,16 @@ class LandingPageViewController: UIViewController {
     @IBOutlet weak var singInButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
     
+    var navigateToLoginController = false
+    
     //MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         initiateUIComponentsView()
+        if navigateToLoginController {
+            self.navigationController?.setNavigationBarHidden(false, animated: false)
+            self.pushLoginViewControllerWithAnimation(animation: false)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,6 +53,7 @@ class LandingPageViewController: UIViewController {
         self.registerButton.layer.masksToBounds = true
         let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: navigationController, action: nil)
         navigationItem.backBarButtonItem = backButton
+        
     }
     
     func pushRegistrationViewController () {
@@ -54,9 +61,9 @@ class LandingPageViewController: UIViewController {
         self.navigationController?.pushViewController(registrationVC, animated: true)
     }
     
-    func pushLoginViewController () {
+    func pushLoginViewControllerWithAnimation (animation : Bool) {
         let loginVC = LoginViewController.instantiateFromStoryboard()
-        self.navigationController?.pushViewController(loginVC, animated: true)
+        self.navigationController?.pushViewController(loginVC, animated: animation)
     }
     
     func checkNotificationAuthorization () {
@@ -79,15 +86,10 @@ class LandingPageViewController: UIViewController {
         })
     }
     
-    func presentWaittingAccountActiviationVC() {
-        let waittingVC = WaitingForAccountActiviationViewController.instantiateFromStoryboard()
-        self.present(waittingVC, animated: true, completion: nil)
-    }
-    
     //MARK: - Actions
     @IBAction func signInButtonClicked(_ sender: Any) {
-        //self.pushLoginViewController()
-        self.presentWaittingAccountActiviationVC()
+        self.pushLoginViewControllerWithAnimation(animation: true)
+        //self.presentWaittingAccountActiviationVC()
     }
     
     @IBAction func registerButtonClicked(_ sender: Any) {
