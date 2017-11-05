@@ -59,9 +59,35 @@ class LandingPageViewController: UIViewController {
         self.navigationController?.pushViewController(loginVC, animated: true)
     }
     
+    func checkNotificationAuthorization () {
+        NotificationsManager.checkForNotificationAuthorization(completionHandler: {authorizationStatus in
+            switch authorizationStatus {
+            case .notDetermined:
+                self.requestForNotificationAuthorization()
+            case .authorized:
+                // Schedule Local Notification
+                break
+            case .denied:
+                print("Application Not Allowed to Display Notifications")
+            }
+        })
+    }
+    
+    func requestForNotificationAuthorization () {
+        NotificationsManager.requestNotificationsAuthorization(completionHandler: {(granted, error) in
+            
+        })
+    }
+    
+    func presentWaittingAccountActiviationVC() {
+        let waittingVC = WaitingForAccountActiviationViewController.instantiateFromStoryboard()
+        self.present(waittingVC, animated: true, completion: nil)
+    }
+    
     //MARK: - Actions
     @IBAction func signInButtonClicked(_ sender: Any) {
-        self.pushLoginViewController()
+        //self.pushLoginViewController()
+        self.presentWaittingAccountActiviationVC()
     }
     
     @IBAction func registerButtonClicked(_ sender: Any) {
