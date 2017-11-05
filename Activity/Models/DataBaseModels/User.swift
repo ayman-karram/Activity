@@ -15,6 +15,7 @@ class User: Object {
     @objc dynamic var email  = ""
     @objc dynamic var birthday  = ""
     @objc dynamic var password  = ""
+    @objc dynamic var isAccountVerified  = false
 
     override static func primaryKey() -> String? {
         return "email"
