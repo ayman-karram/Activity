@@ -11,7 +11,7 @@ import UIKit
 class LoginViewController: UIViewController {
     
     //MARK: - Properties
-    @IBOutlet weak var registrationTableView: UITableView!
+    @IBOutlet weak var loginTableView: UITableView!
     
     var fieldsTitlesList       = ["Email", "Password"]
     var fieldsPlaceHoldersList = ["your@email.com" , "Password"]
@@ -36,14 +36,14 @@ class LoginViewController: UIViewController {
     //MARK: - Helper Functions
     func initiateUIComponentsView () {
         self.title = "Log in"
-        registrationTableView.register(UINib(nibName: "RegistrationInputTableViewCell", bundle: nil), forCellReuseIdentifier: "inputInfoCell")
+        loginTableView.register(UINib(nibName: "RegistrationInputTableViewCell", bundle: nil), forCellReuseIdentifier: "inputInfoCell")
         addTabGestureToTableView()
         addDoneNavigationBarItem()
     }
     
     func addTabGestureToTableView () {
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action:#selector (self.dismissKeyboard))
-        registrationTableView.addGestureRecognizer(tapGesture)
+        loginTableView.addGestureRecognizer(tapGesture)
     }
     
     func addDoneNavigationBarItem () {
@@ -58,6 +58,15 @@ class LoginViewController: UIViewController {
     
     @objc func doneBarButtonItemClicked (sender : Any) {
         
+        let validation = VaildationManager.isUserLoginDataIsVaild(loginTableView: self.loginTableView)
+        if validation.0 {
+            
+        }
+        else
+        {
+            let alert = AlertManager.getAlerWith(title: "Notes", message: validation.1)
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
 }

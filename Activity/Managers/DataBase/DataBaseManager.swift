@@ -37,5 +37,10 @@ class DataBaseManager {
     func updateStateToUserAccountVerfication (user : User , Verified : Bool) {
        RealmManager.sharedInstance.updateStateToUserAccountVerfication(user: user, Verified: Verified)
     }
+    
+    func checkUserLoginAuthorizationWith (userEmail : String , password: String) -> (Bool , User?) {
+        
+        return RealmManager.sharedInstance.checkUserLoginAuthorizationWith(userEmail:userEmail , password:password)
+    }
 
 }

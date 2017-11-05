@@ -49,4 +49,17 @@ class RealmManager {
             user.isAccountVerified = Verified
         }
     }
+    
+    func checkUserLoginAuthorizationWith (userEmail : String , password: String) -> (Bool , User?) {
+        
+        let result = realm.objects(User.self).filter("email = '\(userEmail)' AND password = '\(password)'")
+        
+        if result.count > 0 {
+            return (true ,result.first!)
+        }
+        else
+        {
+            return (false ,nil)
+        }
+    }
 }
