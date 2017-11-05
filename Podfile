@@ -8,6 +8,7 @@ target 'Activity' do
     pod 'IQKeyboardManagerSwift'
     pod 'RealmSwift'
     pod 'DatePickerDialog'
+    pod 'SRCountdownTimer'
     
   target 'ActivityTests' do
     inherit! :search_paths

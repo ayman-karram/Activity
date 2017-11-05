@@ -29,6 +29,8 @@
 		D347426E1FADD6730055EFBF /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347426D1FADD6730055EFBF /* constants.swift */; };
 		D34742701FADD9BC0055EFBF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347426F1FADD9BC0055EFBF /* RegisterViewController.swift */; };
 		D3A35CA31FAE43EC00BA5BBE /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A35CA21FAE43EC00BA5BBE /* AlertManager.swift */; };
+		D3A35CA51FAE7FE400BA5BBE /* WaitingForAccountActiviationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A35CA41FAE7FE400BA5BBE /* WaitingForAccountActiviationViewController.swift */; };
+		D3A35CA71FAE980100BA5BBE /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A35CA61FAE980100BA5BBE /* NotificationsManager.swift */; };
 		D3DFB1A61FADEEC50073CB8E /* RegistrationInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DFB1A51FADEEC50073CB8E /* RegistrationInputTableViewCell.swift */; };
 		D3EE0F51806D5360F32AEB3B /* Pods_Activity_ActivityTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4103FC7832CE123CB899A7A /* Pods_Activity_ActivityTests.framework */; };
 /* End PBXBuildFile section */
@@ -101,6 +103,8 @@
 		D347426F1FADD9BC0055EFBF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D367D8221FAE09C700AA18DA /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3A35CA21FAE43EC00BA5BBE /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		D3A35CA41FAE7FE400BA5BBE /* WaitingForAccountActiviationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingForAccountActiviationViewController.swift; sourceTree = "<group>"; };
+		D3A35CA61FAE980100BA5BBE /* NotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
 		D3DF403D2F8C94F658A1C43C /* Pods-Activity-ActivityUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Activity-ActivityUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Activity-ActivityUITests/Pods-Activity-ActivityUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D3DFB1A51FADEEC50073CB8E /* RegistrationInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationInputTableViewCell.swift; sourceTree = "<group>"; };
 		F5CCFC5F89CC3C947DD83811 /* Pods-Activity-ActivityTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Activity-ActivityTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Activity-ActivityTests/Pods-Activity-ActivityTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -271,6 +275,7 @@
 				D30A95E91FAE233C00BED0EF /* DataBase */,
 				D3A35CA21FAE43EC00BA5BBE /* AlertManager.swift */,
 				D30A95F11FAE330500BED0EF /* VaildationManager.swift */,
+				D3A35CA61FAE980100BA5BBE /* NotificationsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 				D34742691FADC80B0055EFBF /* LandingPageViewController.swift */,
 				D347426F1FADD9BC0055EFBF /* RegisterViewController.swift */,
 				D30A95E41FAE1ABC00BED0EF /* LoginViewController.swift */,
+				D3A35CA41FAE7FE400BA5BBE /* WaitingForAccountActiviationViewController.swift */,
 				D3DFB1A41FADEE660073CB8E /* TableCells */,
 			);
 			path = Registration;
@@ -494,6 +500,7 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SRCountdownTimer/SRCountdownTimer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -501,6 +508,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SRCountdownTimer.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -610,6 +618,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3A35CA51FAE7FE400BA5BBE /* WaitingForAccountActiviationViewController.swift in Sources */,
 				D30A95E51FAE1ABC00BED0EF /* LoginViewController.swift in Sources */,
 				D3A35CA31FAE43EC00BA5BBE /* AlertManager.swift in Sources */,
 				D30A95F01FAE276300BED0EF /* DataBaseManager.swift in Sources */,
@@ -619,6 +628,7 @@
 				D347426A1FADC80B0055EFBF /* LandingPageViewController.swift in Sources */,
 				D347426E1FADD6730055EFBF /* constants.swift in Sources */,
 				D34742701FADD9BC0055EFBF /* RegisterViewController.swift in Sources */,
+				D3A35CA71FAE980100BA5BBE /* NotificationsManager.swift in Sources */,
 				D30A95F21FAE330500BED0EF /* VaildationManager.swift in Sources */,
 				D30A95EC1FAE261500BED0EF /* User.swift in Sources */,
 			);
