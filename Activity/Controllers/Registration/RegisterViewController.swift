@@ -47,9 +47,7 @@ class RegisterViewController: UIViewController {
         self.navigationItem.setRightBarButton(JoinButton, animated: true)
     }
     
-    
     func showDatePickerView () {
-        
         
         DatePickerDialog().show("Birthdate", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", maximumDate:Date() as Date, datePickerMode: .date) {
             (date) -> Void in

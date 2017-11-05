@@ -19,4 +19,12 @@ class HelperManager {
         landingPageVC.navigateToLoginController = true
         appDelegate.window?.rootViewController = landingPageNavigationController
     }
+    
+    class func makeMainTabbarAsRootViewControllerToWindow() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let tabbarStoryBoard = UIStoryboard(name: "MainTabBar", bundle: nil)
+        let tabbarController = tabbarStoryBoard.instantiateViewController(withIdentifier: "MainTabbarVC") as! UITabBarController
+        
+        appDelegate.window?.rootViewController = tabbarController
+    }
 }

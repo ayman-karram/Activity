@@ -60,7 +60,7 @@ class LoginViewController: UIViewController {
         
         let validation = VaildationManager.isUserLoginDataIsVaild(loginTableView: self.loginTableView)
         if validation.0 {
-            
+            HelperManager.makeMainTabbarAsRootViewControllerToWindow()
         }
         else
         {
