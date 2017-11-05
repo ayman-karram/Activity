@@ -49,7 +49,9 @@ class RegisterViewController: UIViewController {
     
     
     func showDatePickerView () {
-        DatePickerDialog().show("Birthdate", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", datePickerMode: .date) {
+        
+        
+        DatePickerDialog().show("Birthdate", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", maximumDate:Date() as Date, datePickerMode: .date) {
             (date) -> Void in
             if let dt = date {
                 let formatter = DateFormatter()
@@ -129,6 +131,9 @@ extension RegisterViewController : UITableViewDelegate , UITableViewDataSource {
             inputPlaceHolder = self.fieldsPlaceHoldersList[indexPath.row + 2]
             if indexPath.row == 2  { // Birthday
                 cell.inputValueTextField.isEnabled = false
+            }
+            if indexPath.row == 1 { // Password
+               cell.inputValueTextField.isSecureTextEntry = true
             }
             break
         default:

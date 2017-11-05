@@ -89,6 +89,9 @@ extension LoginViewController : UITableViewDelegate , UITableViewDataSource {
         let  inputTitle = self.fieldsTitlesList[indexPath.row]
         let  inputPlaceHolder = self.fieldsPlaceHoldersList[indexPath.row]
         
+        if indexPath.row == 1 {
+            cell.inputValueTextField.isSecureTextEntry = true
+        }
         cell.setUpCellWithInput(title: inputTitle, placeHolder: inputPlaceHolder)
         
         return cell
