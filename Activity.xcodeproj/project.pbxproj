@@ -29,6 +29,8 @@
 		D347426A1FADC80B0055EFBF /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34742691FADC80B0055EFBF /* LandingPageViewController.swift */; };
 		D347426E1FADD6730055EFBF /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347426D1FADD6730055EFBF /* constants.swift */; };
 		D34742701FADD9BC0055EFBF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347426F1FADD9BC0055EFBF /* RegisterViewController.swift */; };
+		D37549CE1FAF9D650046B85A /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D37549CD1FAF9D650046B85A /* MainTabBar.storyboard */; };
+		D37549D31FAFA02D0046B85A /* TodoActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37549D21FAFA02D0046B85A /* TodoActivityViewController.swift */; };
 		D3A35CA31FAE43EC00BA5BBE /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A35CA21FAE43EC00BA5BBE /* AlertManager.swift */; };
 		D3A35CA51FAE7FE400BA5BBE /* WaitingForAccountActiviationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A35CA41FAE7FE400BA5BBE /* WaitingForAccountActiviationViewController.swift */; };
 		D3A35CA71FAE980100BA5BBE /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A35CA61FAE980100BA5BBE /* NotificationsManager.swift */; };
@@ -104,6 +106,8 @@
 		D347426D1FADD6730055EFBF /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
 		D347426F1FADD9BC0055EFBF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D367D8221FAE09C700AA18DA /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D37549CD1FAF9D650046B85A /* MainTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
+		D37549D21FAFA02D0046B85A /* TodoActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoActivityViewController.swift; sourceTree = "<group>"; };
 		D3A35CA21FAE43EC00BA5BBE /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		D3A35CA41FAE7FE400BA5BBE /* WaitingForAccountActiviationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingForAccountActiviationViewController.swift; sourceTree = "<group>"; };
 		D3A35CA61FAE980100BA5BBE /* NotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
@@ -259,6 +263,7 @@
 			children = (
 				D34742371FADC0F90055EFBF /* Main.storyboard */,
 				D34742671FADC5330055EFBF /* Registration.storyboard */,
+				D37549CD1FAF9D650046B85A /* MainTabBar.storyboard */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				D347426B1FADC81B0055EFBF /* Registration */,
+				D37549D11FAF9FFE0046B85A /* TodoActivity */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -301,6 +307,14 @@
 				D347426D1FADD6730055EFBF /* constants.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D37549D11FAF9FFE0046B85A /* TodoActivity */ = {
+			isa = PBXGroup;
+			children = (
+				D37549D21FAFA02D0046B85A /* TodoActivityViewController.swift */,
+			);
+			path = TodoActivity;
 			sourceTree = "<group>";
 		};
 		D3DFB1A41FADEE660073CB8E /* TableCells */ = {
@@ -432,6 +446,7 @@
 				D347423E1FADC0F90055EFBF /* LaunchScreen.storyboard in Resources */,
 				D34742681FADC5330055EFBF /* Registration.storyboard in Resources */,
 				D347423B1FADC0F90055EFBF /* Assets.xcassets in Resources */,
+				D37549CE1FAF9D650046B85A /* MainTabBar.storyboard in Resources */,
 				D30A95E71FAE1AE100BED0EF /* RegistrationInputTableViewCell.xib in Resources */,
 				D34742391FADC0F90055EFBF /* Main.storyboard in Resources */,
 			);
@@ -626,6 +641,7 @@
 				D3A35CA31FAE43EC00BA5BBE /* AlertManager.swift in Sources */,
 				D30A95F01FAE276300BED0EF /* DataBaseManager.swift in Sources */,
 				D30A95EE1FAE26C600BED0EF /* RealmManager.swift in Sources */,
+				D37549D31FAFA02D0046B85A /* TodoActivityViewController.swift in Sources */,
 				D3DFB1A61FADEEC50073CB8E /* RegistrationInputTableViewCell.swift in Sources */,
 				D34742341FADC0F90055EFBF /* AppDelegate.swift in Sources */,
 				D347426A1FADC80B0055EFBF /* LandingPageViewController.swift in Sources */,
