@@ -78,10 +78,11 @@ class RegisterViewController: UIViewController {
         if validation.0 {
             let userModel = validation.2
             DataBaseManager.sharedInstance.saveUser(user : userModel!)
+            DataBaseManager.sharedInstance.setCurrentLoginUserWithUser(user: userModel!)
         }
         else
         {
-            let alert = AlertManager.getAlerWithTitle(title: "Notes", message: validation.1)
+            let alert = AlertManager.getAlerWith(title: "Notes", message: validation.1)
             self.present(alert, animated: true, completion: nil)
         }
     }

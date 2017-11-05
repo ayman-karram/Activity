@@ -40,6 +40,15 @@ class WaitingForAccountActiviationViewController: UIViewController {
         
     }
     
+    func showVerificationSuccessAlert () {
+        let alert = AlertManager.getAlerWith(title: SCUESS, message: ACCOUNTVERIFIEDMESSAGE)
+        alert.addAction(UIAlertAction(title: "Login", style: .cancel, handler: { action in
+            
+            
+        }))
+        self.present(alert, animated: true, completion: nil)
+
+    }
     //MARK:- Notification
     func checkNotificationAuthorization () {
         
@@ -70,8 +79,14 @@ class WaitingForAccountActiviationViewController: UIViewController {
 //MARK: - SRCountdownTimerDelegate, UNUserNotificationCenterDelegate
 extension WaitingForAccountActiviationViewController : SRCountdownTimerDelegate, UNUserNotificationCenterDelegate {
     func timerDidEnd() {
+        guard let currentUser = DataBaseManager.sharedInstance.currentLoginUser else {
+            return
+        }
         
+        if currentUser.isAccountVerified == false {
+        DataBaseManager.sharedInstance.updateStateToUserAccountVerfication(user: currentUser, Verified: true)
+            showVerificationSuccessAlert()
+        }
     }
-    
     
 }

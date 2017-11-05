@@ -16,8 +16,10 @@ let NAVIAGTIONBARTITLECOLOR = UIColor(red: 51, green: 51, blue: 51, alpha: 1)
 let NAVIAGTIONBARTITLENAME = "HelveticaNeue-Medium"
 let NAVIAGTIONBARTITLEFONTSIZE : CGFloat = 15
 
-//MARK: messages Constants
+//MARK: messages
 let FIRSTNAMEREQUIREDMESSAGE = "First name is required"
 let PASSWORDREQUIREDMESSAGE  = "Password is required"
 let EMAILREQUIREDMESSAGE     = "Email is required"
 let EMAILNOTVAILDMESSAGE     = "Email is not vaild"
+let SCUESS = "Success"
+let ACCOUNTVERIFIEDMESSAGE = "Your Account has been activiated successfully, You can Login now!"
