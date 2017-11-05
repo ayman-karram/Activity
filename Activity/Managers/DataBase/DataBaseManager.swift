@@ -19,15 +19,23 @@ class DataBaseManager {
         return Singlton.instance
     }
     
+    var currentLoginUser : User?
+
     //MARK: - User
     func saveUser (user : User) {
         RealmManager.sharedInstance.addUserToDB(user: user)
     }
     
-    func getUser() -> User {
-        return RealmManager.sharedInstance.getUserFromDB()
+    func setCurrentLoginUserWithUser(user : User) {
+        self.currentLoginUser = user
     }
     
+    func getUserWith(userEmail : String) -> User? {
+        return RealmManager.sharedInstance.getUserWith(userEmail:userEmail)
+    }
     
+    func updateStateToUserAccountVerfication (user : User , Verified : Bool) {
+       RealmManager.sharedInstance.updateStateToUserAccountVerfication(user: user, Verified: Verified)
+    }
 
 }

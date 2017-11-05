@@ -39,9 +39,14 @@ class RealmManager {
         }
     }
     
-    func getUserFromDB () -> User {
-        let users = realm.objects(User.self)
-        return users.first!
+    func getUserWith(userEmail : String) -> User? {
+        let user = realm.objects(User.self).filter("email = \(userEmail)")
+        return user.first
     }
     
+    func updateStateToUserAccountVerfication (user : User, Verified : Bool ) {
+        try! realm.write {
+            user.isAccountVerified = Verified
+        }
+    }
 }
