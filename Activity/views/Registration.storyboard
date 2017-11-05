@@ -66,7 +66,7 @@
                         <viewLayoutGuide key="safeArea" id="mAX-VE-ImR"/>
                     </view>
                     <connections>
-                        <outlet property="registrationTableView" destination="cS8-jY-rKa" id="4za-7S-2VX"/>
+                        <outlet property="loginTableView" destination="cS8-jY-rKa" id="Pkr-z5-cIm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V3h-I4-Aoa" userLabel="First Responder" sceneMemberID="firstResponder"/>

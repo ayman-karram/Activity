@@ -64,6 +64,58 @@ class VaildationManager {
         return (false , vaildationMessage , nil)
     }
     
+    class func isUserLoginDataIsVaild(loginTableView : UITableView) -> (Bool , String , User?) {
+        
+        var vaildationMessage = ""
+        var vaild = true
+        var loginCell : RegistrationInputTableViewCell?
+        var indexPath : IndexPath?
+        var email = ""
+        var password = ""
+        
+        // Email
+        indexPath = IndexPath(row: 0, section: 0)
+        loginCell = loginTableView.cellForRow(at: indexPath!) as? RegistrationInputTableViewCell
+        
+        email = loginCell!.inputValueTextField.text!
+        let vaildateEmail = self.isEmailIsVaild(email : email)
+        
+        if vaildateEmail.0 == false {
+            vaild = false
+            vaildationMessage += "\n" + vaildateEmail.1
+        }
+        
+        // password
+        indexPath = IndexPath(row: 1, section: 0)
+        loginCell = loginTableView.cellForRow(at: indexPath!) as? RegistrationInputTableViewCell
+        
+        password = loginCell!.inputValueTextField.text!
+        let vaildatePassword = self.isPasswordIsVaild(password: password)
+        
+        if vaildatePassword.0 == false {
+            vaild = false
+            vaildationMessage += "\n" + vaildatePassword.1
+        }
+        
+        if vaild {
+            
+            let loginCredentialsVaild = DataBaseManager.sharedInstance.checkUserLoginAuthorizationWith(userEmail: email, password: password)
+            
+            if loginCredentialsVaild.0 {
+                DataBaseManager.sharedInstance.setCurrentLoginUserWithUser(user: loginCredentialsVaild.1!)
+                return (true , "" , loginCredentialsVaild.1)
+            }
+            else
+            {
+                return (false,EMAILORPASSWORDNOTCORRECT, nil)
+            }
+           
+        }
+        
+        return (false , vaildationMessage , nil)
+    }
+    
+    
     class func isUserFirstNameIsVaild (name : String) -> (Bool, String) {
         
         if name == "" {
