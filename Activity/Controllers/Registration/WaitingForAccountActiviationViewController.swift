@@ -37,18 +37,17 @@ class WaitingForAccountActiviationViewController: UIViewController {
     //MARK: - Helper Functions
     func initiateUIComponentsView () {
         countdownView.start(beginingValue: 10, interval: 1)
-        
+        countdownView.delegate = self
     }
     
     func showVerificationSuccessAlert () {
         let alert = AlertManager.getAlerWith(title: SCUESS, message: ACCOUNTVERIFIEDMESSAGE)
-        alert.addAction(UIAlertAction(title: "Login", style: .cancel, handler: { action in
-            
-            
+        alert.addAction(UIAlertAction(title: "LOGIN", style: .default, handler: { action in
+            HelperManager.navigateToLoginController()
         }))
         self.present(alert, animated: true, completion: nil)
-
     }
+    
     //MARK:- Notification
     func checkNotificationAuthorization () {
         
@@ -78,6 +77,7 @@ class WaitingForAccountActiviationViewController: UIViewController {
 
 //MARK: - SRCountdownTimerDelegate, UNUserNotificationCenterDelegate
 extension WaitingForAccountActiviationViewController : SRCountdownTimerDelegate, UNUserNotificationCenterDelegate {
+    
     func timerDidEnd() {
         guard let currentUser = DataBaseManager.sharedInstance.currentLoginUser else {
             return
@@ -88,5 +88,4 @@ extension WaitingForAccountActiviationViewController : SRCountdownTimerDelegate,
             showVerificationSuccessAlert()
         }
     }
-    
 }

@@ -47,8 +47,8 @@ class RegisterViewController: UIViewController {
         self.navigationItem.setRightBarButton(JoinButton, animated: true)
     }
     
+    
     func showDatePickerView () {
-        
         DatePickerDialog().show("Birthdate", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", datePickerMode: .date) {
             (date) -> Void in
             if let dt = date {
@@ -66,6 +66,11 @@ class RegisterViewController: UIViewController {
         
     }
     
+    func presentWaittingAccountActiviationVC() {
+        let waittingVC = WaitingForAccountActiviationViewController.instantiateFromStoryboard()
+        self.present(waittingVC, animated: true, completion: nil)
+    }
+    
     //MARK: - Actions Functions
     @objc func dismissKeyboard() {
         self.view.endEditing(true)
@@ -79,6 +84,7 @@ class RegisterViewController: UIViewController {
             let userModel = validation.2
             DataBaseManager.sharedInstance.saveUser(user : userModel!)
             DataBaseManager.sharedInstance.setCurrentLoginUserWithUser(user: userModel!)
+            self.presentWaittingAccountActiviationVC()
         }
         else
         {
