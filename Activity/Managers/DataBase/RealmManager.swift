@@ -40,7 +40,7 @@ class RealmManager {
     }
     
     func getUserWith(userEmail : String) -> User? {
-        let user = realm.objects(User.self).filter("email = \(userEmail)")
+        let user = realm.objects(User.self).filter("email = '\(userEmail)'")
         return user.first
     }
     

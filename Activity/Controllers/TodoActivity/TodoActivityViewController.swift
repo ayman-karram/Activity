@@ -11,12 +11,14 @@ import UIKit
 class TodoActivityViewController: UIViewController {
 
     //MARK: - Properties
-
+    @IBOutlet weak var toDoTableView: UITableView!
+    var userActivites : [String : [Activity]]? // String key is activity type
+    
     //MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         initiateUIComponentsView()
-        // Do any additional setup after loading the view.
+        getUserActivites()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,10 +43,59 @@ class TodoActivityViewController: UIViewController {
         let JoinButton = UIBarButtonItem(barButtonSystemItem:.add , target: self, action: #selector (self.addNewActivityBarButtonItemClicked(sender:)))
         self.navigationItem.setRightBarButton(JoinButton, animated: true)
     }
-
+   
+    func getUserActivites () {
+        self.userActivites = DataBaseManager.sharedInstance.getLoggedInUserActivites()
+        self.toDoTableView.reloadData()
+    }
+    
     //MARK: -  Actions
     @objc func addNewActivityBarButtonItemClicked (sender : Any) {
         pushAddNewActivityVC()
+    }
+}
+
+
+//MARK: - UITableViewDelegate, UITableViewDataSource
+extension TodoActivityViewController : UITableViewDelegate , UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        guard let _ = self.userActivites else {
+            return 0
+        }
+        
+        return ACTIVITESTAYPELIST.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        guard let activites = self.userActivites else {
+            return 0
+        }
+        
+        let selectedActivityType = ACTIVITESTAYPELIST[section]
+
+        return activites[selectedActivityType]!.count
+
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "ToDoCell")
+        let selectedActivityType = ACTIVITESTAYPELIST[indexPath.section]
+        let selectedActivity = self.userActivites![selectedActivityType]![indexPath.row]
+        
+        cell.textLabel?.text = selectedActivity.name
+        
+        
+        return cell
+    }
+    
+    func  tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+
+        let selectedActivityType = ACTIVITESTAYPELIST[section]
+        return selectedActivityType
     }
 
 }
