@@ -41,7 +41,7 @@ class WaitingForAccountActiviationViewController: UIViewController {
     }
     
     func showVerificationSuccessAlert () {
-        let alert = AlertManager.getAlerWith(title: SCUESS, message: ACCOUNTVERIFIEDMESSAGE)
+        let alert = AlertManager.getAlerWithOkButton(title: SCUESS, message: ACCOUNTVERIFIEDMESSAGE)
         alert.addAction(UIAlertAction(title: "LOGIN", style: .default, handler: { action in
             HelperManager.navigateToLoginController()
         }))

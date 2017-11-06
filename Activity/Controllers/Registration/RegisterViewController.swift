@@ -87,7 +87,7 @@ class RegisterViewController: UIViewController {
         }
         else
         {
-            let alert = AlertManager.getAlerWith(title: "Notes", message: validation.1)
+            let alert = AlertManager.getAlerWithOkButton(title: "Notes", message: validation.1)
             self.present(alert, animated: true, completion: nil)
         }
     }

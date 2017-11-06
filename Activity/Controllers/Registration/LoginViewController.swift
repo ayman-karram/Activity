@@ -61,11 +61,12 @@ class LoginViewController: UIViewController {
         let dataValidation = VaildationManager.isUserLoginDataIsVaild(loginTableView: self.loginTableView)
         if dataValidation.0 { // is vaild
             UserDefaultsManager.setUserDidLogin(login: true)
+            DataBaseManager.sharedInstance.setCurrentLoginUserWithUser(user: dataValidation.2!)
             HelperManager.makeMainTabbarAsRootViewControllerToWindow()
         }
         else                 // not vaild
         {
-            let alert = AlertManager.getAlerWith(title: "Notes", message: dataValidation.1)
+            let alert = AlertManager.getAlerWithOkButton(title: "Notes", message: dataValidation.1)
             self.present(alert, animated: true, completion: nil)
         }
     }
