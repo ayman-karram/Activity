@@ -11,14 +11,13 @@ import Charts
 
 class ActivityViewController: UIViewController {
 
+    //MARK: - Properties
     @IBOutlet weak var barChart: BarChartView!
-    let months = ["Jan", "Feb", "Mar", "Apr", "May"]
-    let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0]
-    let unitsBought = [10.0, 14.0, 60.0, 13.0, 2.0]
+    var userActivites : [String : [Activity]]? // String key is activity type
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setChart()
+        getUserActivites()
         // Do any additional setup after loading the view.
     }
 
@@ -27,77 +26,61 @@ class ActivityViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: - Helper Functions
+    func getUserActivites () {
+        self.userActivites = DataBaseManager.sharedInstance.getLoggedInUserActivites()
+        setChart()
+    }
+    
 
-    func setChart() {
+    func  setChart () {
+    
+        let barWidth = 0.7
 
-  barChart.noDataText = "You need to provide data for the chart."
-        var dataEntries: [BarChartDataEntry] = []
-        var dataEntries1: [BarChartDataEntry] = []
+        // Customization
+        barChart.chartDescription?.text = ""
+        barChart.xAxis.labelPosition = .bottom
+        barChart.leftAxis.axisMinimum = 0.0
+        barChart.leftAxis.axisMaximum = 10.0
+        barChart.rightAxis.enabled = false
+        barChart.xAxis.drawGridLinesEnabled = true
+        barChart.legend.enabled = true
+        barChart.scaleYEnabled = true
+        barChart.scaleXEnabled = true
+        barChart.pinchZoomEnabled = true
+        barChart.doubleTapToZoomEnabled = true
+        barChart.highlighter = nil
+        
+        
+        // Initialize an array to store chart data entries (values; y axis)
+        var salesEntries = [ChartDataEntry]()
+        
+        // Initialize an array to store months (labels; x axis)
+        let activityTypes = ACTIVITESTAYPELIST
+        barChart.xAxis.valueFormatter = IndexAxisValueFormatter(values:activityTypes)
 
-        for i in 0..<self.months.count {
-
-            let dataEntry = BarChartDataEntry(x: Double(i) , y: self.unitsSold[i])
-            dataEntries.append(dataEntry)
-
-            let dataEntry1 = BarChartDataEntry(x: Double(i) , y: self.self.unitsBought[i])
-            dataEntries1.append(dataEntry1)
-
-            //stack barchart
-            //let dataEntry = BarChartDataEntry(x: Double(i), yValues:  [self.unitsSold[i],self.unitsBought[i]], label: "groupChart")
-
-
-
+        barChart.xAxis.granularity = 1
+        
+        for (index , activityTypeString) in activityTypes.enumerated() {
+            // Create single chart data entry and append it to the array
+            let activitesCount = Double ((self.userActivites![activityTypeString]?.count)!)
+            let saleEntry = BarChartDataEntry(x: Double(index), y: activitesCount)
+            salesEntries.append(saleEntry)
         }
-
-        let chartDataSet = BarChartDataSet(values: dataEntries, label: "Unit sold")
-        let chartDataSet1 = BarChartDataSet(values: dataEntries1, label: "Unit Bought")
-
-        let dataSets: [BarChartDataSet] = [chartDataSet,chartDataSet1]
-        chartDataSet.colors = [UIColor(red: 230/255, green: 126/255, blue: 34/255, alpha: 1)]
-        //chartDataSet.colors = ChartColorTemplates.colorful()
-        //let chartData = BarChartData(dataSet: chartDataSet)
-
-        let chartData = BarChartData(dataSets: dataSets)
-
-
-        let groupSpace = 0.3
-        let barSpace = 0.05
-        let barWidth = 0.3
-        // (0.3 + 0.05) * 2 + 0.3 = 1.00 -> interval per "group"
-
-        let groupCount = self.months.count
-        let startYear = 0
-
-
-        chartData.barWidth = barWidth;
-        barChart.xAxis.axisMinimum = Double(startYear)
-        let gg = chartData.groupWidth(groupSpace: groupSpace, barSpace: barSpace)
-        print("Groupspace: \(gg)")
-        barChart.xAxis.axisMaximum = Double(startYear) + gg * Double(groupCount)
-
-        chartData.groupBars(fromX: Double(startYear), groupSpace: groupSpace, barSpace: barSpace)
-        //chartData.groupWidth(groupSpace: groupSpace, barSpace: barSpace)
-        barChart.notifyDataSetChanged()
-
+        
+        // Create bar chart data set containing salesEntries
+        let chartDataSet = BarChartDataSet(values: salesEntries, label: "Activites")
+        chartDataSet.colors = ChartColorTemplates.joyful()
+        
+        // Create bar chart data with data set and array with values for x axis
+        let chartData = BarChartData(dataSets: [chartDataSet])
+        
+        chartData.barWidth = barWidth
+        
+        // Set bar chart data to previously created data
         barChart.data = chartData
-
-
-        //background color
-        barChart.backgroundColor = UIColor(red: 189/255, green: 195/255, blue: 199/255, alpha: 1)
-
-        //chart animation
-        barChart.animate(xAxisDuration: 1.5, yAxisDuration: 1.5, easingOption: .linear)
-
-
+        
+        // Animation
+        barChart.animate(yAxisDuration: 1.5, easingOption: .easeInOutQuart)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
