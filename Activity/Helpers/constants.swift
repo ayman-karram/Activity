@@ -24,3 +24,7 @@ let EMAILNOTVAILDMESSAGE     = "Email is not vaild"
 let SCUESS = "Success"
 let ACCOUNTVERIFIEDMESSAGE = "Your Account has been activiated successfully, You can Login now!"
 let EMAILORPASSWORDNOTCORRECT = "Email or password not correct"
+
+//MARK: - Time and date
+let APPDATEFORMATE = "dd MMMM yyyy"
+let APPTIMEFORMATE = "h:mm a"

@@ -30,6 +30,12 @@ class TodoActivityViewController: UIViewController {
         addActivityNavigationBarItem()
     }
     
+    func pushAddNewActivityVC () {
+        
+        let addNewActivityNC = self.storyboard?.instantiateViewController(withIdentifier: "AddNewActivityNC") as! UINavigationController
+        self.present(addNewActivityNC, animated: true, completion: nil)
+    }
+    
     func addActivityNavigationBarItem () {
         
         let JoinButton = UIBarButtonItem(barButtonSystemItem:.add , target: self, action: #selector (self.addNewActivityBarButtonItemClicked(sender:)))
@@ -38,7 +44,7 @@ class TodoActivityViewController: UIViewController {
 
     //MARK: -  Actions
     @objc func addNewActivityBarButtonItemClicked (sender : Any) {
-        
+        pushAddNewActivityVC()
     }
 
 }
