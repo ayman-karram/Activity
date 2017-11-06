@@ -12,6 +12,8 @@ class UserDefaultsManager: NSObject {
     
     struct Keys {
         static let userDidLogin = "userDidLogin"
+        static let loggedInUserEmail = "loggedInUserEmail"
+
     }
     
     class func setUserDidLogin (login : Bool) {
@@ -21,4 +23,13 @@ class UserDefaultsManager: NSObject {
     class func getUserDidLogin () -> Bool? {
         return UserDefaults.standard.bool(forKey: Keys.userDidLogin)
     }
+    
+    class func setLoggedInUserEmail (email : String) {
+        UserDefaults.standard.set(email, forKey: Keys.loggedInUserEmail)
+    }
+    
+    class func getLoggedInUserEmail () -> String? {
+        return UserDefaults.standard.string(forKey: Keys.loggedInUserEmail)
+    }
+    
 }

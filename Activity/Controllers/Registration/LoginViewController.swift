@@ -61,6 +61,7 @@ class LoginViewController: UIViewController {
         let dataValidation = VaildationManager.isUserLoginDataIsVaild(loginTableView: self.loginTableView)
         if dataValidation.0 { // is vaild
             UserDefaultsManager.setUserDidLogin(login: true)
+            UserDefaultsManager.setLoggedInUserEmail(email: dataValidation.2!.email)
             DataBaseManager.sharedInstance.setCurrentLoginUserWithUser(user: dataValidation.2!)
             HelperManager.makeMainTabbarAsRootViewControllerToWindow()
         }
@@ -70,7 +71,6 @@ class LoginViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
-    
 }
 
 //MARK: - UITableViewDelegate, UITableViewDataSource
