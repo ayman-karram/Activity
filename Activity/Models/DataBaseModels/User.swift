@@ -10,13 +10,15 @@ import Foundation
 import RealmSwift
 
 class User: Object {
+    
     @objc dynamic var firstName = ""
     @objc dynamic var lastName  = ""
     @objc dynamic var email  = ""
     @objc dynamic var birthday  = ""
     @objc dynamic var password  = ""
     @objc dynamic var isAccountVerified  = false
-
+    let activities = List<Activity>()
+    
     override static func primaryKey() -> String? {
         return "email"
     }
