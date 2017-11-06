@@ -62,4 +62,23 @@ class RealmManager {
             return (false ,nil)
         }
     }
+    
+    //MARK: Activity
+    func addActivityTo(userEmail : String , activity : Activity) -> Bool {
+        
+        let userResult = realm.objects(User.self).filter("email = '\(userEmail)'")
+        
+        if userResult.count > 0 {
+            let selectedUser = userResult.first!
+            
+            try! realm.write {
+                selectedUser.activities.append(activity)
+            }
+            return true
+        }
+        else
+        {
+            return false
+        }
+    }
 }

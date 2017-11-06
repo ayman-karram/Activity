@@ -43,4 +43,14 @@ class DataBaseManager {
         return RealmManager.sharedInstance.checkUserLoginAuthorizationWith(userEmail:userEmail , password:password)
     }
 
+    //MARK: - Activity
+    func addActivityToCurrentLoggedUserWith (activity : Activity) -> Bool {
+        
+        guard let currentUser = self.currentLoginUser else {
+            return false
+        }
+        
+        return RealmManager.sharedInstance.addActivityTo(userEmail: currentUser.email, activity: activity)
+    }
+
 }
