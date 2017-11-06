@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Todo Activity View Controller-->
+        <scene sceneID="nDL-ZV-G59">
+            <objects>
+                <viewController storyboardIdentifier="TodoActivityViewController" id="SS7-hm-Jod" customClass="TodoActivityViewController" customModule="Activity" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bxm-eW-l10">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="F8S-Qj-1jT"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yCL-GM-Ze4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OtX-rF-7kS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1081" y="1055"/>
+        </scene>
+        <!--Add New Activity View Controller-->
+        <scene sceneID="M3o-ax-ReA">
+            <objects>
+                <viewController storyboardIdentifier="AddNewActivityViewController" id="8tm-Zj-d0L" customClass="AddNewActivityViewController" customModule="Activity" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z3o-ZL-Eob">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ED8-TN-KgF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ED8-TN-KgF" firstAttribute="top" secondItem="Z3o-ZL-Eob" secondAttribute="top" id="4qG-la-A2x"/>
+                            <constraint firstItem="ED8-TN-KgF" firstAttribute="bottom" secondItem="9Pn-iX-IKw" secondAttribute="bottom" id="Bfj-MC-ZdU"/>
+                            <constraint firstItem="ED8-TN-KgF" firstAttribute="leading" secondItem="9Pn-iX-IKw" secondAttribute="leading" id="O7H-e9-fed"/>
+                            <constraint firstItem="ED8-TN-KgF" firstAttribute="trailing" secondItem="9Pn-iX-IKw" secondAttribute="trailing" id="RvS-VG-zb7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9Pn-iX-IKw"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TpB-Ek-Kgb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1800.8" y="1054.7226386806597"/>
+        </scene>
+    </scenes>
+</document>

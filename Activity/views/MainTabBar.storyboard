@@ -24,39 +24,48 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aYz-PC-MeX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1081" y="-335"/>
+            <point key="canvasLocation" x="1081" y="-358"/>
         </scene>
         <!--Activity-->
         <scene sceneID="0aN-XQ-I6t">
             <objects>
-                <viewController id="3Et-tu-yKy" sceneMemberID="viewController">
+                <viewController id="3Et-tu-yKy" customClass="ActivityViewController" customModule="Activity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WQw-s2-LOO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xpr-sC-Vp6" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xpr-sC-Vp6" firstAttribute="bottom" secondItem="wkG-bn-zOB" secondAttribute="bottom" id="D5I-de-zUx"/>
+                            <constraint firstItem="xpr-sC-Vp6" firstAttribute="top" secondItem="wkG-bn-zOB" secondAttribute="top" id="N35-On-PH2"/>
+                            <constraint firstItem="xpr-sC-Vp6" firstAttribute="leading" secondItem="wkG-bn-zOB" secondAttribute="leading" id="Tmn-rS-jRI"/>
+                            <constraint firstItem="xpr-sC-Vp6" firstAttribute="trailing" secondItem="wkG-bn-zOB" secondAttribute="trailing" id="rjD-zB-KfY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wkG-bn-zOB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Activity" id="gPG-H6-y85"/>
+                    <connections>
+                        <outlet property="barChart" destination="xpr-sC-Vp6" id="aY2-rt-u9F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2da-DY-sz0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1081" y="349"/>
+            <point key="canvasLocation" x="1080.8" y="348.57571214392806"/>
         </scene>
-        <!--Todo Activity View Controller-->
-        <scene sceneID="clT-rp-sAV">
+        <!--TodoActivityViewController-->
+        <scene sceneID="aMv-vk-t7j">
             <objects>
-                <viewController storyboardIdentifier="TodoActivityViewController" id="jPz-rZ-OE8" customClass="TodoActivityViewController" customModule="Activity" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="x31-Nf-bTx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="AsQ-8z-qYw"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="l2U-jK-N2G"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9PV-TA-SDw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="ToDoActivities" referencedIdentifier="TodoActivityViewController" id="cBy-pr-NCA" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="wYe-VH-2W4"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yI1-6t-6LH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1127" y="1055"/>
+            <point key="canvasLocation" x="1048" y="1054"/>
         </scene>
         <!--Settings-->
         <scene sceneID="lq5-zs-ll5">
@@ -72,23 +81,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2TR-yB-Yu2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1126" y="1772"/>
+            <point key="canvasLocation" x="1081" y="1772"/>
         </scene>
         <!--Home-->
         <scene sceneID="VlZ-ye-1wg">
             <objects>
-                <viewController id="gzH-Nw-xm9" sceneMemberID="viewController">
+                <viewController id="gzH-Nw-xm9" customClass="HomeViewController" customModule="Activity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mNn-i6-Wil">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L9o-ax-2Jq" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="L9o-ax-2Jq" firstAttribute="trailing" secondItem="gjo-BI-Tbt" secondAttribute="trailing" id="DPW-9e-o5Q"/>
+                            <constraint firstItem="L9o-ax-2Jq" firstAttribute="leading" secondItem="gjo-BI-Tbt" secondAttribute="leading" id="bhH-xO-AgF"/>
+                            <constraint firstItem="L9o-ax-2Jq" firstAttribute="top" secondItem="gjo-BI-Tbt" secondAttribute="top" id="f6Y-bf-tb9"/>
+                            <constraint firstItem="L9o-ax-2Jq" firstAttribute="bottom" secondItem="gjo-BI-Tbt" secondAttribute="bottom" id="itd-lZ-E9r"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gjo-BI-Tbt"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="k3A-ml-KAl"/>
+                    <connections>
+                        <outlet property="pieChartView" destination="L9o-ax-2Jq" id="cwt-FR-fuB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zs2-Je-uSy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1081" y="-1022"/>
+            <point key="canvasLocation" x="1080.8" y="-1022.3388305847077"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="cfu-Xt-Fo0">
@@ -142,12 +166,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="jPz-rZ-OE8" kind="relationship" relationship="rootViewController" id="7AJ-1F-xZh"/>
+                        <segue destination="cBy-pr-NCA" kind="relationship" relationship="rootViewController" id="pag-db-4Tn"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="40u-R4-r5J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="243.19999999999999" y="1055.1724137931035"/>
+            <point key="canvasLocation" x="250" y="1055"/>
         </scene>
         <!--Home-->
         <scene sceneID="PFM-qp-wFH">
@@ -204,7 +228,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YM3-1y-OFP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="250" y="1772"/>
+            <point key="canvasLocation" x="241" y="1772"/>
         </scene>
     </scenes>
 </document>

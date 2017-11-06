@@ -31,6 +31,11 @@
 		D34742701FADD9BC0055EFBF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347426F1FADD9BC0055EFBF /* RegisterViewController.swift */; };
 		D37549CE1FAF9D650046B85A /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D37549CD1FAF9D650046B85A /* MainTabBar.storyboard */; };
 		D37549D31FAFA02D0046B85A /* TodoActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37549D21FAFA02D0046B85A /* TodoActivityViewController.swift */; };
+		D390C2E81FAFD8B8000445B2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D390C2E71FAFD8B8000445B2 /* HomeViewController.swift */; };
+		D390C2EC1FAFDC0D000445B2 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D390C2EB1FAFDC0D000445B2 /* ActivityViewController.swift */; };
+		D390C2EF1FB07A69000445B2 /* ActivityTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D390C2EE1FB07A69000445B2 /* ActivityTypeTableViewCell.xib */; };
+		D390C2F11FB07C3E000445B2 /* AddNewActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D390C2F01FB07C3E000445B2 /* AddNewActivityViewController.swift */; };
+		D390C2F31FB0801B000445B2 /* ToDoActivities.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D390C2F21FB0801B000445B2 /* ToDoActivities.storyboard */; };
 		D3A35CA31FAE43EC00BA5BBE /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A35CA21FAE43EC00BA5BBE /* AlertManager.swift */; };
 		D3A35CA51FAE7FE400BA5BBE /* WaitingForAccountActiviationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A35CA41FAE7FE400BA5BBE /* WaitingForAccountActiviationViewController.swift */; };
 		D3A35CA71FAE980100BA5BBE /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A35CA61FAE980100BA5BBE /* NotificationsManager.swift */; };
@@ -108,6 +113,11 @@
 		D367D8221FAE09C700AA18DA /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D37549CD1FAF9D650046B85A /* MainTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
 		D37549D21FAFA02D0046B85A /* TodoActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoActivityViewController.swift; sourceTree = "<group>"; };
+		D390C2E71FAFD8B8000445B2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D390C2EB1FAFDC0D000445B2 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		D390C2EE1FB07A69000445B2 /* ActivityTypeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityTypeTableViewCell.xib; sourceTree = "<group>"; };
+		D390C2F01FB07C3E000445B2 /* AddNewActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewActivityViewController.swift; sourceTree = "<group>"; };
+		D390C2F21FB0801B000445B2 /* ToDoActivities.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToDoActivities.storyboard; sourceTree = "<group>"; };
 		D3A35CA21FAE43EC00BA5BBE /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		D3A35CA41FAE7FE400BA5BBE /* WaitingForAccountActiviationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingForAccountActiviationViewController.swift; sourceTree = "<group>"; };
 		D3A35CA61FAE980100BA5BBE /* NotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
@@ -264,6 +274,7 @@
 				D34742371FADC0F90055EFBF /* Main.storyboard */,
 				D34742671FADC5330055EFBF /* Registration.storyboard */,
 				D37549CD1FAF9D650046B85A /* MainTabBar.storyboard */,
+				D390C2F21FB0801B000445B2 /* ToDoActivities.storyboard */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -271,6 +282,8 @@
 		D34742651FADC15D0055EFBF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D390C2EA1FAFDBED000445B2 /* Activity */,
+				D390C2E61FAFD8A8000445B2 /* Home */,
 				D347426B1FADC81B0055EFBF /* Registration */,
 				D37549D11FAF9FFE0046B85A /* TodoActivity */,
 			);
@@ -313,8 +326,34 @@
 			isa = PBXGroup;
 			children = (
 				D37549D21FAFA02D0046B85A /* TodoActivityViewController.swift */,
+				D390C2F01FB07C3E000445B2 /* AddNewActivityViewController.swift */,
+				D390C2ED1FB07944000445B2 /* TableCells */,
 			);
 			path = TodoActivity;
+			sourceTree = "<group>";
+		};
+		D390C2E61FAFD8A8000445B2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D390C2E71FAFD8B8000445B2 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D390C2EA1FAFDBED000445B2 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				D390C2EB1FAFDC0D000445B2 /* ActivityViewController.swift */,
+			);
+			path = Activity;
+			sourceTree = "<group>";
+		};
+		D390C2ED1FB07944000445B2 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				D390C2EE1FB07A69000445B2 /* ActivityTypeTableViewCell.xib */,
+			);
+			path = TableCells;
 			sourceTree = "<group>";
 		};
 		D3DFB1A41FADEE660073CB8E /* TableCells */ = {
@@ -446,8 +485,10 @@
 				D347423E1FADC0F90055EFBF /* LaunchScreen.storyboard in Resources */,
 				D34742681FADC5330055EFBF /* Registration.storyboard in Resources */,
 				D347423B1FADC0F90055EFBF /* Assets.xcassets in Resources */,
+				D390C2F31FB0801B000445B2 /* ToDoActivities.storyboard in Resources */,
 				D37549CE1FAF9D650046B85A /* MainTabBar.storyboard in Resources */,
 				D30A95E71FAE1AE100BED0EF /* RegistrationInputTableViewCell.xib in Resources */,
+				D390C2EF1FB07A69000445B2 /* ActivityTypeTableViewCell.xib in Resources */,
 				D34742391FADC0F90055EFBF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -642,13 +683,16 @@
 				D30A95E51FAE1ABC00BED0EF /* LoginViewController.swift in Sources */,
 				D3A35CA31FAE43EC00BA5BBE /* AlertManager.swift in Sources */,
 				D30A95F01FAE276300BED0EF /* DataBaseManager.swift in Sources */,
+				D390C2EC1FAFDC0D000445B2 /* ActivityViewController.swift in Sources */,
 				D30A95EE1FAE26C600BED0EF /* RealmManager.swift in Sources */,
+				D390C2F11FB07C3E000445B2 /* AddNewActivityViewController.swift in Sources */,
 				D37549D31FAFA02D0046B85A /* TodoActivityViewController.swift in Sources */,
 				D3DFB1A61FADEEC50073CB8E /* RegistrationInputTableViewCell.swift in Sources */,
 				D34742341FADC0F90055EFBF /* AppDelegate.swift in Sources */,
 				D347426A1FADC80B0055EFBF /* LandingPageViewController.swift in Sources */,
 				D347426E1FADD6730055EFBF /* constants.swift in Sources */,
 				D34742701FADD9BC0055EFBF /* RegisterViewController.swift in Sources */,
+				D390C2E81FAFD8B8000445B2 /* HomeViewController.swift in Sources */,
 				D3A35CA71FAE980100BA5BBE /* NotificationsManager.swift in Sources */,
 				D30A95F21FAE330500BED0EF /* VaildationManager.swift in Sources */,
 				D30A95EC1FAE261500BED0EF /* User.swift in Sources */,
