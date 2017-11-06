@@ -17,10 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         self.initiateUIComponentsView()
         self.initiateVariables()
         self.checkNotificationAuthorization()
-    
+        self.setMainInitialViewController()
+        
         return true
     }
     
@@ -53,6 +55,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             NSAttributedStringKey.strokeColor : NAVIAGTIONBARTITLECOLOR
         ]
     }
+    
+    func setMainInitialViewController () {
+    
+        guard let userLoggedIn = UserDefaultsManager.getUserDidLogin() else {
+            return
+        }
+        
+        if userLoggedIn {
+            HelperManager.makeMainTabbarAsRootViewControllerToWindow()
+        }
+    }
+    
     
     func checkForCurrentUserAccountActivation() {
         guard let currentUser = DataBaseManager.sharedInstance.currentLoginUser else {
