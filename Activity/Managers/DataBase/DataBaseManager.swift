@@ -52,5 +52,13 @@ class DataBaseManager {
         
         return RealmManager.sharedInstance.addActivityTo(userEmail: currentUser.email, activity: activity)
     }
+    
+    func getLoggedInUserActivites() ->  [String : [Activity]]? {
+        
+        guard let currentUser = self.currentLoginUser else {
+            return nil
+        }
+        return RealmManager.sharedInstance.getActivitesForUser(email: currentUser.email)
+    }
 
 }

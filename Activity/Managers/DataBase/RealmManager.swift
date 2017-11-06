@@ -67,7 +67,6 @@ class RealmManager {
     func addActivityTo(userEmail : String , activity : Activity) -> Bool {
         
         let userResult = realm.objects(User.self).filter("email = '\(userEmail)'")
-        
         if userResult.count > 0 {
             let selectedUser = userResult.first!
             
@@ -80,5 +79,29 @@ class RealmManager {
         {
             return false
         }
+    }
+    
+    func getActivitesForUser(email : String) ->  [String : [Activity]]{
+        
+        var activites : [String : [Activity]] = [:]
+
+        let userResult = realm.objects(User.self).filter("email = '\(email)'")
+        if userResult.count > 0 {
+        let selectedUser = userResult.first!
+      
+            for activityString in ACTIVITESTAYPELIST {
+            
+                let arrayOfActivities = self.filterUserActivitiesAccordingToTypeWith( user: selectedUser, activityType: activityString)
+                activites [activityString] = arrayOfActivities
+            }
+        }
+        
+        return activites
+    }
+    
+    func filterUserActivitiesAccordingToTypeWith (user : User , activityType : String) -> [Activity] {
+        
+        let activites = user.activities.filter({$0.type == activityType})
+        return Array(activites)
     }
 }
