@@ -11,6 +11,7 @@
 		391880E33260A1BD15B6059B /* Pods_ActivityUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EEF5E83104B0BB9B83CD10B /* Pods_ActivityUITests.framework */; };
 		59AD104A20A4CBFA0C4B9064 /* Pods_Activity_ActivityUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC55C38B4631EB7DF0EB5A84 /* Pods_Activity_ActivityUITests.framework */; };
 		D302D51F1FAF73C200599B5A /* HelperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D302D51E1FAF73C200599B5A /* HelperManager.swift */; };
+		D3093BA01FB09F5200AF2603 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3093B9F1FB09F5200AF2603 /* Activity.swift */; };
 		D30A95E11FAE0DD200BED0EF /* Pods_Activity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B22997784837F2692A8D883 /* Pods_Activity.framework */; };
 		D30A95E21FAE0DD200BED0EF /* Pods_Activity.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9B22997784837F2692A8D883 /* Pods_Activity.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D30A95E51FAE1ABC00BED0EF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30A95E41FAE1ABC00BED0EF /* LoginViewController.swift */; };
@@ -90,6 +91,7 @@
 		B90EA4A2D774528AC70B7E26 /* Pods_ActivityTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ActivityTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3789C691CF6DEBC81EB4D07 /* Pods-Activity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Activity.release.xcconfig"; path = "Pods/Target Support Files/Pods-Activity/Pods-Activity.release.xcconfig"; sourceTree = "<group>"; };
 		D302D51E1FAF73C200599B5A /* HelperManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperManager.swift; sourceTree = "<group>"; };
+		D3093B9F1FB09F5200AF2603 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		D30A95E41FAE1ABC00BED0EF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D30A95E61FAE1AE100BED0EF /* RegistrationInputTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationInputTableViewCell.xib; sourceTree = "<group>"; };
 		D30A95EB1FAE261500BED0EF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				D30A95EB1FAE261500BED0EF /* User.swift */,
+				D3093B9F1FB09F5200AF2603 /* Activity.swift */,
 			);
 			path = DataBaseModels;
 			sourceTree = "<group>";
@@ -694,6 +697,7 @@
 				D390C2F71FB08EB1000445B2 /* UserDefaultsManager.swift in Sources */,
 				D30A95EE1FAE26C600BED0EF /* RealmManager.swift in Sources */,
 				D390C2F11FB07C3E000445B2 /* AddNewActivityViewController.swift in Sources */,
+				D3093BA01FB09F5200AF2603 /* Activity.swift in Sources */,
 				D37549D31FAFA02D0046B85A /* TodoActivityViewController.swift in Sources */,
 				D3DFB1A61FADEEC50073CB8E /* RegistrationInputTableViewCell.swift in Sources */,
 				D34742341FADC0F90055EFBF /* AppDelegate.swift in Sources */,
