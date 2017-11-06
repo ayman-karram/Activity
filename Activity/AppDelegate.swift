@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         self.initiateUIComponentsView()
         self.initiateVariables()
         self.checkNotificationAuthorization()
-        self.setMainInitialViewController()
+        HelperManager.setMainInitialViewController()
         
         return true
     }
@@ -56,29 +56,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         ]
     }
     
-    func setMainInitialViewController () {
-    
-        guard let userLoggedIn = UserDefaultsManager.getUserDidLogin() else {
-            return
-        }
-        
-        if userLoggedIn {
-            HelperManager.makeMainTabbarAsRootViewControllerToWindow()
-        }
-    }
-    
-    
-    func checkForCurrentUserAccountActivation() {
-        guard let currentUser = DataBaseManager.sharedInstance.currentLoginUser else {
-            return
-        }
-        
-        if currentUser.isAccountVerified == false {
-            DataBaseManager.sharedInstance.updateStateToUserAccountVerfication(user: currentUser, Verified: true)
-            HelperManager.navigateToLoginController()
-        }
-        
-    }
     
     func initiateVariables () {
         IQKeyboardManager.sharedManager().enable = true
@@ -107,13 +84,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     //MARK: - UNUserNotificationCenterDelegate
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         
-        self.checkForCurrentUserAccountActivation()
+        HelperManager.checkForCurrentUserAccountActivation()
         
         completionHandler([.alert])
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        self.checkForCurrentUserAccountActivation()
+        HelperManager.checkForCurrentUserAccountActivation()
     }
 }
 

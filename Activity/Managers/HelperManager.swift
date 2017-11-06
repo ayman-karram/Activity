@@ -27,4 +27,35 @@ class HelperManager {
         
         appDelegate.window?.rootViewController = tabbarController
     }
+    
+    
+    class func setMainInitialViewController () {
+        
+        guard let userLoggedIn = UserDefaultsManager.getUserDidLogin() else {
+            
+            return
+        }
+        
+        if userLoggedIn {
+            let userEmail = UserDefaultsManager.getLoggedInUserEmail()!
+            let user = DataBaseManager.sharedInstance.getUserWith(userEmail: userEmail)!
+            DataBaseManager.sharedInstance.setCurrentLoginUserWithUser(user: user)
+            HelperManager.makeMainTabbarAsRootViewControllerToWindow()
+
+        }
+    }
+    
+    
+    class func checkForCurrentUserAccountActivation() {
+        guard let currentUser = DataBaseManager.sharedInstance.currentLoginUser else {
+            return
+        }
+        
+        if currentUser.isAccountVerified == false {
+            DataBaseManager.sharedInstance.updateStateToUserAccountVerfication(user: currentUser, Verified: true)
+            HelperManager.navigateToLoginController()
+        }
+        
+    }
+    
 }
