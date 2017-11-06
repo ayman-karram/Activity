@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="typeCell" id="Q06-zQ-Y0Y" customClass="ActivityTypeTableViewCell" customModule="Activity" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="369" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Q06-zQ-Y0Y" id="RRg-vy-Kpv">
+                <rect key="frame" x="0.0" y="0.0" width="369" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sOu-Sk-Ylt">
+                        <rect key="frame" x="17" y="7" width="335" height="29"/>
+                        <segments>
+                            <segment title="Daily"/>
+                            <segment title="Weekly"/>
+                            <segment title="Monthly"/>
+                            <segment title="Quarterly"/>
+                            <segment title="Yearly"/>
+                        </segments>
+                    </segmentedControl>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="sOu-Sk-Ylt" secondAttribute="bottom" constant="8.5" id="6KV-lH-5HU"/>
+                    <constraint firstAttribute="trailing" secondItem="sOu-Sk-Ylt" secondAttribute="trailing" constant="17" id="E9U-SS-BIe"/>
+                    <constraint firstItem="sOu-Sk-Ylt" firstAttribute="top" secondItem="RRg-vy-Kpv" secondAttribute="top" constant="7" id="pST-um-7Vn"/>
+                    <constraint firstItem="sOu-Sk-Ylt" firstAttribute="leading" secondItem="RRg-vy-Kpv" secondAttribute="leading" constant="17" id="uEw-LY-jp2"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="activityTypeSegmentControl" destination="sOu-Sk-Ylt" id="6Kl-CG-BBc"/>
+            </connections>
+            <point key="canvasLocation" x="20.5" y="-123"/>
+        </tableViewCell>
+    </objects>
+</document>
