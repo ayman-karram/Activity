@@ -58,13 +58,14 @@ class LoginViewController: UIViewController {
     
     @objc func doneBarButtonItemClicked (sender : Any) {
         
-        let validation = VaildationManager.isUserLoginDataIsVaild(loginTableView: self.loginTableView)
-        if validation.0 {
+        let dataValidation = VaildationManager.isUserLoginDataIsVaild(loginTableView: self.loginTableView)
+        if dataValidation.0 { // is vaild
+            UserDefaultsManager.setUserDidLogin(login: true)
             HelperManager.makeMainTabbarAsRootViewControllerToWindow()
         }
-        else
+        else                 // not vaild
         {
-            let alert = AlertManager.getAlerWith(title: "Notes", message: validation.1)
+            let alert = AlertManager.getAlerWith(title: "Notes", message: dataValidation.1)
             self.present(alert, animated: true, completion: nil)
         }
     }

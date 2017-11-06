@@ -25,16 +25,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3p9-wb-Gbj">
-                        <rect key="frame" x="17" y="11" width="70.5" height="21"/>
+                        <rect key="frame" x="17" y="11" width="97" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="70.5" id="Ty0-JM-HLa"/>
+                            <constraint firstAttribute="width" constant="97" id="Ty0-JM-HLa"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                         <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l95-o3-mvQ">
-                        <rect key="frame" x="124" y="7" width="223" height="30"/>
+                        <rect key="frame" x="145" y="7" width="202" height="30"/>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                         <textInputTraits key="textInputTraits"/>
@@ -47,14 +47,14 @@
                     <constraint firstAttribute="bottom" secondItem="l95-o3-mvQ" secondAttribute="bottom" constant="6.5" id="Mbc-rU-qye"/>
                     <constraint firstAttribute="trailing" secondItem="l95-o3-mvQ" secondAttribute="trailing" constant="28" id="PSs-6l-v33"/>
                     <constraint firstItem="l95-o3-mvQ" firstAttribute="top" secondItem="P2n-jF-KqL" secondAttribute="top" constant="7" id="Ra4-gC-ail"/>
-                    <constraint firstItem="l95-o3-mvQ" firstAttribute="leading" secondItem="3p9-wb-Gbj" secondAttribute="trailing" constant="36" id="vtz-oc-czn"/>
+                    <constraint firstItem="l95-o3-mvQ" firstAttribute="leading" secondItem="3p9-wb-Gbj" secondAttribute="trailing" constant="31" id="vtz-oc-czn"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="inputTitleLabel" destination="3p9-wb-Gbj" id="jQB-4r-5MO"/>
                 <outlet property="inputValueTextField" destination="l95-o3-mvQ" id="BgI-lV-kgm"/>
             </connections>
-            <point key="canvasLocation" x="46" y="-239"/>
+            <point key="canvasLocation" x="45.5" y="-239"/>
         </tableViewCell>
     </objects>
 </document>

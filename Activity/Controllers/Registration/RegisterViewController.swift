@@ -53,7 +53,7 @@ class RegisterViewController: UIViewController {
             (date) -> Void in
             if let dt = date {
                 let formatter = DateFormatter()
-                formatter.dateFormat = "MM/dd/yyyy"
+                formatter.dateFormat =  APPDATEFORMATE
                 
                 var registrationCell : RegistrationInputTableViewCell?
                 var indexPath : IndexPath?
@@ -63,7 +63,6 @@ class RegisterViewController: UIViewController {
                 registrationCell?.inputValueTextField.text = formatter.string(from: dt)
             }
         }
-        
     }
     
     func presentWaittingAccountActiviationVC() {
@@ -142,7 +141,7 @@ extension RegisterViewController : UITableViewDelegate , UITableViewDataSource {
         
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 1 && indexPath.row == 2 { // Birthday
             self.showDatePickerView()
