@@ -38,3 +38,6 @@ let APPTIMEFORMATE = "h:mm a"
 
 //MARK: General
 let ACTIVITESTAYPELIST = ["Daily", "Weekly", "Monthly", "Quarterly", "Yearly"]
+
+//MARK: - Notifications Center
+let ADDEDNEWACTIVITYNOTIFICATIONNAME = "AddNewActivity"

@@ -11,10 +11,11 @@ import UserNotifications
 
 class NotificationsManager {
     
+    //MARK: - Local Notifications
     class func checkForNotificationAuthorization(completionHandler: @escaping (UNAuthorizationStatus) -> Swift.Void) {
         
         UNUserNotificationCenter.current().getNotificationSettings { (notificationSettings) in
-
+            
             completionHandler(notificationSettings.authorizationStatus)
         }
     }
@@ -40,4 +41,13 @@ class NotificationsManager {
         let center = UNUserNotificationCenter.current()
         center.add(request)
     }
+    
+    //MARK: -  Notifications Center
+    class func postNotificationWithNotification (name : String) {
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: name), object: nil)
+        
+    }
+    
+    
 }

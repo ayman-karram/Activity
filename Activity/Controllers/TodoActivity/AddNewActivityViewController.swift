@@ -102,7 +102,8 @@ class AddNewActivityViewController: UIViewController {
         
         let alert = AlertManager.getAlerWithOutActions(title: SCUESS, message: ADDACTIVITYSUCCESSMESSAGE)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
-            
+            NotificationsManager.postNotificationWithNotification(name: ADDEDNEWACTIVITYNOTIFICATIONNAME)
+            self.dismiss(animated: true, completion: nil)
         }))
         self.present(alert, animated: true, completion: nil)
     }

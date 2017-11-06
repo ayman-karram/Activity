@@ -19,6 +19,7 @@ class TodoActivityViewController: UIViewController {
         super.viewDidLoad()
         initiateUIComponentsView()
         getUserActivites()
+        addNotificationsObservers()
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,12 +50,20 @@ class TodoActivityViewController: UIViewController {
         self.toDoTableView.reloadData()
     }
     
+    //MARK: - Notifications Center
+    func addNotificationsObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.userDidAddNewActivity(notification:)), name: NSNotification.Name(rawValue: ADDEDNEWACTIVITYNOTIFICATIONNAME), object: nil)
+    }
+
+    @objc func userDidAddNewActivity (notification : NSNotification) {
+        self.getUserActivites()
+    }
+    
     //MARK: -  Actions
     @objc func addNewActivityBarButtonItemClicked (sender : Any) {
         pushAddNewActivityVC()
     }
 }
-
 
 //MARK: - UITableViewDelegate, UITableViewDataSource
 extension TodoActivityViewController : UITableViewDelegate , UITableViewDataSource {
@@ -87,7 +96,6 @@ extension TodoActivityViewController : UITableViewDelegate , UITableViewDataSour
         let selectedActivity = self.userActivites![selectedActivityType]![indexPath.row]
         
         cell.textLabel?.text = selectedActivity.name
-        
         
         return cell
     }
