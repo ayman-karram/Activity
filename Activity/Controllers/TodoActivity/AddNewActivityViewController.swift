@@ -45,7 +45,7 @@ class AddNewActivityViewController: UIViewController {
     }
     
     func setTableViewCellsRegister() {
-    
+        
         addNewActivityTableView.register(UINib(nibName: "RegistrationInputTableViewCell", bundle: nil), forCellReuseIdentifier: "inputInfoCell")
         addNewActivityTableView.register(UINib(nibName: "ActivityTypeTableViewCell", bundle: nil), forCellReuseIdentifier: "typeCell")
     }
@@ -98,8 +98,47 @@ class AddNewActivityViewController: UIViewController {
         }
     }
     
+    func showAddedActivitySuccessAlert () {
+        
+        let alert = AlertManager.getAlerWithOutActions(title: SCUESS, message: ADDACTIVITYSUCCESSMESSAGE)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+            
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func showAddedActivityFailAlert () {
+        
+        let alert = AlertManager.getAlerWithOutActions(title: FAIL, message: ADDACTIVITYFAILESSAGE)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+            
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     //MARK: -  Actions
     @objc func doneBarButtonItemClicked (sender : Any) {
+        
+        let validation = VaildationManager.isUserAddNewActivityDataIsVaild(addActivityTableView: self.addNewActivityTableView)
+        
+        if validation.0 {
+            let activityModel = validation.2
+            let addedResult = DataBaseManager.sharedInstance.addActivityToCurrentLoggedUserWith(activity: activityModel!)
+            
+            if addedResult
+            {
+                self.showAddedActivitySuccessAlert()
+            }
+            else
+            {
+                self.showAddedActivityFailAlert()
+            }
+        }
+        else
+        {
+            let alert = AlertManager.getAlerWithOkButton(title: "Notes", message: validation.1)
+            self.present(alert, animated: true, completion: nil)
+        }
         
     }
     
@@ -169,7 +208,7 @@ extension AddNewActivityViewController : UITableViewDelegate , UITableViewDataSo
             return ""
         }
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 2 && indexPath.row == 0 { // Date
             self.showDatePickerView()

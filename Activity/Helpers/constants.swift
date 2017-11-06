@@ -21,10 +21,20 @@ let FIRSTNAMEREQUIREDMESSAGE = "First name is required"
 let PASSWORDREQUIREDMESSAGE  = "Password is required"
 let EMAILREQUIREDMESSAGE     = "Email is required"
 let EMAILNOTVAILDMESSAGE     = "Email is not vaild"
+let ACTIVITYNAMEEQUIREDMESSAGE = "Activity name is required"
+
 let SCUESS = "Success"
+let FAIL = "Fail"
+
 let ACCOUNTVERIFIEDMESSAGE = "Your Account has been activiated successfully, You can Login now!"
+
 let EMAILORPASSWORDNOTCORRECT = "Email or password not correct"
+let ADDACTIVITYSUCCESSMESSAGE = "Your Activity has been added successfully!"
+let ADDACTIVITYFAILESSAGE = "Your Activity has been not added Sorry, Something went wrong."
 
 //MARK: - Time and date
 let APPDATEFORMATE = "dd MMMM yyyy"
 let APPTIMEFORMATE = "h:mm a"
+
+//MARK: General
+let ACTIVITESTAYPELIST = ["Daily", "Weekly", "Monthly", "Quarterly", "Yearly"]
