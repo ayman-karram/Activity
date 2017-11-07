@@ -17,7 +17,7 @@
                     <view key="view" contentMode="scaleToFill" id="bwW-wM-dmY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.92146831750869751" green="0.92162626981735229" blue="0.92145836353302002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="kFC-CF-AKN"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="Ae3-mT-1Ne"/>
@@ -36,10 +36,10 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xpr-sC-Vp6" customClass="BarChartView" customModule="Charts">
                                 <rect key="frame" x="0.0" y="64" width="375" height="535"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.92146831750869751" green="0.92162626981735229" blue="0.92145836353302002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="xpr-sC-Vp6" firstAttribute="bottom" secondItem="wkG-bn-zOB" secondAttribute="bottom" constant="-19" id="D5I-de-zUx"/>
                             <constraint firstItem="xpr-sC-Vp6" firstAttribute="top" secondItem="wkG-bn-zOB" secondAttribute="top" id="N35-On-PH2"/>
@@ -74,7 +74,7 @@
                     <view key="view" contentMode="scaleToFill" id="26j-ds-EBh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.92146831750869751" green="0.92162626981735229" blue="0.92145836353302002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="EjU-na-ygS"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="smt-au-6ru"/>
@@ -93,10 +93,10 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L9o-ax-2Jq" customClass="PieChartView" customModule="Charts">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.92146831750869751" green="0.92162626981735229" blue="0.92145836353302002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="L9o-ax-2Jq" firstAttribute="trailing" secondItem="gjo-BI-Tbt" secondAttribute="trailing" id="DPW-9e-o5Q"/>
                             <constraint firstItem="L9o-ax-2Jq" firstAttribute="leading" secondItem="gjo-BI-Tbt" secondAttribute="leading" id="bhH-xO-AgF"/>
