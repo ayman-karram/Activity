@@ -22,7 +22,6 @@
 		D34742391FADC0F90055EFBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D34742371FADC0F90055EFBF /* Main.storyboard */; };
 		D347423B1FADC0F90055EFBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D347423A1FADC0F90055EFBF /* Assets.xcassets */; };
 		D347423E1FADC0F90055EFBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D347423C1FADC0F90055EFBF /* LaunchScreen.storyboard */; };
-		D34742491FADC0F90055EFBF /* ActivityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34742481FADC0F90055EFBF /* ActivityTests.swift */; };
 		D34742541FADC0F90055EFBF /* ActivityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34742531FADC0F90055EFBF /* ActivityUITests.swift */; };
 		D34742681FADC5330055EFBF /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D34742671FADC5330055EFBF /* Registration.storyboard */; };
 		D347426A1FADC80B0055EFBF /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34742691FADC80B0055EFBF /* LandingPageViewController.swift */; };
@@ -30,6 +29,7 @@
 		D34742701FADD9BC0055EFBF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347426F1FADD9BC0055EFBF /* RegisterViewController.swift */; };
 		D34CB5731FB1E9BE0017186C /* UserModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34CB5721FB1E9BE0017186C /* UserModelTests.swift */; };
 		D34CB5751FB1EC990017186C /* ActivityModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34CB5741FB1EC990017186C /* ActivityModelTests.swift */; };
+		D34CB5791FB1F4DF0017186C /* DataBaseManagerTestes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34CB5781FB1F4DF0017186C /* DataBaseManagerTestes.swift */; };
 		D37549CE1FAF9D650046B85A /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D37549CD1FAF9D650046B85A /* MainTabBar.storyboard */; };
 		D37549D31FAFA02D0046B85A /* TodoActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37549D21FAFA02D0046B85A /* TodoActivityViewController.swift */; };
 		D390C2E81FAFD8B8000445B2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D390C2E71FAFD8B8000445B2 /* HomeViewController.swift */; };
@@ -104,7 +104,6 @@
 		D347423D1FADC0F90055EFBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D347423F1FADC0F90055EFBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D34742441FADC0F90055EFBF /* ActivityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActivityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D34742481FADC0F90055EFBF /* ActivityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTests.swift; sourceTree = "<group>"; };
 		D347424A1FADC0F90055EFBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D347424F1FADC0F90055EFBF /* ActivityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActivityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D34742531FADC0F90055EFBF /* ActivityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityUITests.swift; sourceTree = "<group>"; };
@@ -115,6 +114,7 @@
 		D347426F1FADD9BC0055EFBF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D34CB5721FB1E9BE0017186C /* UserModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelTests.swift; sourceTree = "<group>"; };
 		D34CB5741FB1EC990017186C /* ActivityModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModelTests.swift; sourceTree = "<group>"; };
+		D34CB5781FB1F4DF0017186C /* DataBaseManagerTestes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManagerTestes.swift; sourceTree = "<group>"; };
 		D367D8221FAE09C700AA18DA /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D37549CD1FAF9D650046B85A /* MainTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
 		D37549D21FAFA02D0046B85A /* TodoActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoActivityViewController.swift; sourceTree = "<group>"; };
@@ -250,9 +250,8 @@
 		D34742471FADC0F90055EFBF /* ActivityTests */ = {
 			isa = PBXGroup;
 			children = (
-				D34742481FADC0F90055EFBF /* ActivityTests.swift */,
-				D34CB5721FB1E9BE0017186C /* UserModelTests.swift */,
-				D34CB5741FB1EC990017186C /* ActivityModelTests.swift */,
+				D34CB5771FB1F4970017186C /* Managers */,
+				D34CB5761FB1F4720017186C /* Models */,
 				D347424A1FADC0F90055EFBF /* Info.plist */,
 			);
 			path = ActivityTests;
@@ -328,6 +327,23 @@
 				D347426D1FADD6730055EFBF /* constants.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D34CB5761FB1F4720017186C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D34CB5721FB1E9BE0017186C /* UserModelTests.swift */,
+				D34CB5741FB1EC990017186C /* ActivityModelTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D34CB5771FB1F4970017186C /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D34CB5781FB1F4DF0017186C /* DataBaseManagerTestes.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		D37549D11FAF9FFE0046B85A /* TodoActivity */ = {
@@ -711,9 +727,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D34CB5791FB1F4DF0017186C /* DataBaseManagerTestes.swift in Sources */,
 				D34CB5731FB1E9BE0017186C /* UserModelTests.swift in Sources */,
 				D34CB5751FB1EC990017186C /* ActivityModelTests.swift in Sources */,
-				D34742491FADC0F90055EFBF /* ActivityTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

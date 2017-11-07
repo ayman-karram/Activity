@@ -40,7 +40,7 @@ class DataBaseManager {
     
     func checkUserLoginAuthorizationWith (userEmail : String , password: String) -> (Bool , User?) {
         
-        return RealmManager.sharedInstance.checkUserLoginAuthorizationWith(userEmail:userEmail , password:password)
+        return RealmManager.sharedInstance.checkUserLoginAuthorizationWith(userEmail:userEmail, password:password)
     }
 
     //MARK: - Activity
