@@ -44,6 +44,7 @@
 		D3A35CA71FAE980100BA5BBE /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A35CA61FAE980100BA5BBE /* NotificationsManager.swift */; };
 		D3D3047C1FB2022E002A45DF /* VaildationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D3047B1FB2022E002A45DF /* VaildationManagerTests.swift */; };
 		D3D3047E1FB20622002A45DF /* UserDefaultManagerTestes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D3047D1FB20622002A45DF /* UserDefaultManagerTestes.swift */; };
+		D3D304831FB219AB002A45DF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D304821FB219AB002A45DF /* SettingsViewController.swift */; };
 		D3DFB1A61FADEEC50073CB8E /* RegistrationInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DFB1A51FADEEC50073CB8E /* RegistrationInputTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -132,6 +133,7 @@
 		D3A35CA61FAE980100BA5BBE /* NotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
 		D3D3047B1FB2022E002A45DF /* VaildationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaildationManagerTests.swift; sourceTree = "<group>"; };
 		D3D3047D1FB20622002A45DF /* UserDefaultManagerTestes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManagerTestes.swift; sourceTree = "<group>"; };
+		D3D304821FB219AB002A45DF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D3DF403D2F8C94F658A1C43C /* Pods-Activity-ActivityUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Activity-ActivityUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Activity-ActivityUITests/Pods-Activity-ActivityUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D3DFB1A51FADEEC50073CB8E /* RegistrationInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationInputTableViewCell.swift; sourceTree = "<group>"; };
 		F5CCFC5F89CC3C947DD83811 /* Pods-Activity-ActivityTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Activity-ActivityTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Activity-ActivityTests/Pods-Activity-ActivityTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -292,10 +294,11 @@
 		D34742651FADC15D0055EFBF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D390C2EA1FAFDBED000445B2 /* Activity */,
-				D390C2E61FAFD8A8000445B2 /* Home */,
 				D347426B1FADC81B0055EFBF /* Registration */,
 				D37549D11FAF9FFE0046B85A /* TodoActivity */,
+				D390C2EA1FAFDBED000445B2 /* Activity */,
+				D390C2E61FAFD8A8000445B2 /* Home */,
+				D3D3047F1FB21776002A45DF /* Settings */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -385,6 +388,14 @@
 				D390C2EE1FB07A69000445B2 /* ActivityTypeTableViewCell.xib */,
 			);
 			path = TableCells;
+			sourceTree = "<group>";
+		};
+		D3D3047F1FB21776002A45DF /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D3D304821FB219AB002A45DF /* SettingsViewController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		D3DFB1A41FADEE660073CB8E /* TableCells */ = {
@@ -718,6 +729,7 @@
 				D37549D31FAFA02D0046B85A /* TodoActivityViewController.swift in Sources */,
 				D3DFB1A61FADEEC50073CB8E /* RegistrationInputTableViewCell.swift in Sources */,
 				D34742341FADC0F90055EFBF /* AppDelegate.swift in Sources */,
+				D3D304831FB219AB002A45DF /* SettingsViewController.swift in Sources */,
 				D347426A1FADC80B0055EFBF /* LandingPageViewController.swift in Sources */,
 				D347426E1FADD6730055EFBF /* constants.swift in Sources */,
 				D34742701FADD9BC0055EFBF /* RegisterViewController.swift in Sources */,

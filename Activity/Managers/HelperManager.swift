@@ -11,7 +11,9 @@ import UIKit
 
 class HelperManager {
     
+    //MARK: App Window Navigation
     class func navigateToLoginController() {
+        
          let appDelegate = UIApplication.shared.delegate as! AppDelegate
          let registartionStoryBoard = UIStoryboard(name: "Main", bundle: nil)
          let landingPageNavigationController = registartionStoryBoard.instantiateViewController(withIdentifier: "LandingPageNV") as! UINavigationController
@@ -21,6 +23,7 @@ class HelperManager {
     }
     
     class func makeMainTabbarAsRootViewControllerToWindow() {
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let tabbarStoryBoard = UIStoryboard(name: "MainTabBar", bundle: nil)
         let tabbarController = tabbarStoryBoard.instantiateViewController(withIdentifier: "MainTabbarVC") as! UITabBarController
@@ -28,6 +31,13 @@ class HelperManager {
         appDelegate.window?.rootViewController = tabbarController
     }
     
+    class func makeLandingPageAsRootViewControllerToWindow() {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let landingPageVC = LandingPageViewController.instantiateFromStoryboard()
+        
+        appDelegate.window?.rootViewController = landingPageVC
+    }
     
     class func setMainInitialViewController () {
         
@@ -49,7 +59,7 @@ class HelperManager {
         }
     }
     
-    
+    //MARK: General
     class func checkForCurrentUserAccountActivation() {
         guard let currentUser = DataBaseManager.sharedInstance.currentLoginUser else {
             return
@@ -59,7 +69,12 @@ class HelperManager {
             DataBaseManager.sharedInstance.updateStateToUserAccountVerfication(user: currentUser, Verified: true)
             HelperManager.navigateToLoginController()
         }
-        
+    }
+    
+    class func userDidChoiceToLogOut () {
+        UserDefaultsManager.setUserDidLogin(login: false)
+        UserDefaultsManager.setLoggedInUserEmail(email: "")
+        makeLandingPageAsRootViewControllerToWindow()
     }
     
 }

@@ -109,5 +109,4 @@ extension TodoActivityViewController : UITableViewDelegate , UITableViewDataSour
         let selectedActivityType = ACTIVITESTAYPELIST[section]
         return selectedActivityType
     }
-
 }

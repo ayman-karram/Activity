@@ -70,18 +70,34 @@
         <!--Settings-->
         <scene sceneID="lq5-zs-ll5">
             <objects>
-                <viewController id="H0Z-1l-dWO" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" id="H0Z-1l-dWO" customClass="SettingsViewController" customModule="Activity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="26j-ds-EBh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="HXM-O5-dE2">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="H0Z-1l-dWO" id="6Qr-7v-ASj"/>
+                                    <outlet property="delegate" destination="H0Z-1l-dWO" id="hah-Gg-ppN"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="0.92146831750869751" green="0.92162626981735229" blue="0.92145836353302002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="HXM-O5-dE2" firstAttribute="trailing" secondItem="EjU-na-ygS" secondAttribute="trailing" id="FlT-q1-ClN"/>
+                            <constraint firstItem="HXM-O5-dE2" firstAttribute="bottom" secondItem="EjU-na-ygS" secondAttribute="bottom" id="WPs-R0-qPK"/>
+                            <constraint firstItem="HXM-O5-dE2" firstAttribute="top" secondItem="EjU-na-ygS" secondAttribute="top" id="eFE-D2-EbF"/>
+                            <constraint firstItem="HXM-O5-dE2" firstAttribute="leading" secondItem="EjU-na-ygS" secondAttribute="leading" id="mbZ-rY-D6e"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="EjU-na-ygS"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="smt-au-6ru"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2TR-yB-Yu2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1081" y="1772"/>
+            <point key="canvasLocation" x="1080.8" y="1771.6641679160421"/>
         </scene>
         <!--Home-->
         <scene sceneID="VlZ-ye-1wg">

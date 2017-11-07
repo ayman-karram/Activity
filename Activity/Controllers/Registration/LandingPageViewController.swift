@@ -42,6 +42,12 @@ class LandingPageViewController: UIViewController {
         super.viewWillDisappear(animated)
     }
     
+    //MARK: - Instantiation
+    class func instantiateFromStoryboard() -> LandingPageViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        return storyboard.instantiateViewController(withIdentifier: "LandingPageViewController") as! LandingPageViewController
+    }
+    
     //MARK: - Helper Functions
     func initiateUIComponentsView () {
         self.navigationController?.setNavigationBarHidden(true, animated: false)

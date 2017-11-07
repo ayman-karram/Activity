@@ -25,12 +25,14 @@ let ACTIVITYNAMEEQUIREDMESSAGE = "Activity name is required"
 
 let SCUESS = "Success"
 let FAIL = "Fail"
+let LOGOUT = "Log out"
 
 let ACCOUNTVERIFIEDMESSAGE = "Your Account has been activiated successfully, You can Login now!"
 
 let EMAILORPASSWORDNOTCORRECT = "Email or password not correct"
 let ADDACTIVITYSUCCESSMESSAGE = "Your Activity has been added successfully!"
 let ADDACTIVITYFAILESSAGE = "Your Activity has been not added Sorry, Something went wrong."
+let LOGOUTCONFIRMATIONMESSAGE = "Are you sure you want to make Log out?."
 
 //MARK: - Time and date
 let APPDATEFORMATE = "dd MMMM yyyy"
