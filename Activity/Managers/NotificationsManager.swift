@@ -34,7 +34,7 @@ class NotificationsManager {
         content.sound = UNNotificationSound.default()
         content.categoryIdentifier = "com.activity.localNotification"
         // Deliver the notification in five seconds.
-        let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: 60.0, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: 300.0, repeats: false)
         let request = UNNotificationRequest.init(identifier: "AccountActiviation", content: content, trigger: trigger)
         
         // Schedule the notification.

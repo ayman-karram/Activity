@@ -36,7 +36,7 @@ class SettingsViewController: UIViewController {
         let alert = AlertManager.getAlerWithOkButton(title: LOGOUT, message: LOGOUTCONFIRMATIONMESSAGE)
         alert.addAction(UIAlertAction(title: "LOG OUT", style: .default, handler: { action in
             HelperManager.userDidChoiceToLogOut()
-            self.dismiss(animated: true, completion: nil)
+            //self.dismiss(animated: true, completion: nil)
         }))
         self.present(alert, animated: true, completion: nil)
     }

@@ -15,8 +15,8 @@ class HelperManager {
     class func navigateToLoginController() {
         
          let appDelegate = UIApplication.shared.delegate as! AppDelegate
-         let registartionStoryBoard = UIStoryboard(name: "Main", bundle: nil)
-         let landingPageNavigationController = registartionStoryBoard.instantiateViewController(withIdentifier: "LandingPageNV") as! UINavigationController
+         let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+         let landingPageNavigationController = mainStoryBoard.instantiateViewController(withIdentifier: "LandingPageNV") as! UINavigationController
         let landingPageVC = landingPageNavigationController.viewControllers.first as! LandingPageViewController
         landingPageVC.navigateToLoginController = true
         appDelegate.window?.rootViewController = landingPageNavigationController
@@ -34,9 +34,10 @@ class HelperManager {
     class func makeLandingPageAsRootViewControllerToWindow() {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let landingPageVC = LandingPageViewController.instantiateFromStoryboard()
+        let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+        let landingPageNavigationController = mainStoryBoard.instantiateViewController(withIdentifier: "LandingPageNV") as! UINavigationController
         
-        appDelegate.window?.rootViewController = landingPageVC
+        appDelegate.window?.rootViewController = landingPageNavigationController
     }
     
     class func setMainInitialViewController () {
@@ -55,7 +56,6 @@ class HelperManager {
             let user = DataBaseManager.sharedInstance.getUserWith(userEmail: userEmail)!
             DataBaseManager.sharedInstance.setCurrentLoginUserWithUser(user: user)
             HelperManager.makeMainTabbarAsRootViewControllerToWindow()
-
         }
     }
     
@@ -72,8 +72,7 @@ class HelperManager {
     }
     
     class func userDidChoiceToLogOut () {
-        UserDefaultsManager.setUserDidLogin(login: false)
-        UserDefaultsManager.setLoggedInUserEmail(email: "")
+        UserDefaultsManager.removeAllUserDefault()
         makeLandingPageAsRootViewControllerToWindow()
     }
     

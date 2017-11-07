@@ -36,7 +36,7 @@ class WaitingForAccountActiviationViewController: UIViewController {
     
     //MARK: - Helper Functions
     func initiateUIComponentsView () {
-        countdownView.start(beginingValue: 10, interval: 1)
+        countdownView.start(beginingValue: 300, interval: 1)
         countdownView.delegate = self
     }
     
