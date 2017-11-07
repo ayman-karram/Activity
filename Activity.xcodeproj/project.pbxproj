@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		102F1855C8CF46D802873F38 /* Pods_ActivityTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B90EA4A2D774528AC70B7E26 /* Pods_ActivityTests.framework */; };
-		391880E33260A1BD15B6059B /* Pods_ActivityUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EEF5E83104B0BB9B83CD10B /* Pods_ActivityUITests.framework */; };
-		59AD104A20A4CBFA0C4B9064 /* Pods_Activity_ActivityUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC55C38B4631EB7DF0EB5A84 /* Pods_Activity_ActivityUITests.framework */; };
 		D302D51F1FAF73C200599B5A /* HelperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D302D51E1FAF73C200599B5A /* HelperManager.swift */; };
 		D3093BA01FB09F5200AF2603 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3093B9F1FB09F5200AF2603 /* Activity.swift */; };
 		D30A95E11FAE0DD200BED0EF /* Pods_Activity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B22997784837F2692A8D883 /* Pods_Activity.framework */; };
@@ -30,6 +28,8 @@
 		D347426A1FADC80B0055EFBF /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34742691FADC80B0055EFBF /* LandingPageViewController.swift */; };
 		D347426E1FADD6730055EFBF /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347426D1FADD6730055EFBF /* constants.swift */; };
 		D34742701FADD9BC0055EFBF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347426F1FADD9BC0055EFBF /* RegisterViewController.swift */; };
+		D34CB5731FB1E9BE0017186C /* UserModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34CB5721FB1E9BE0017186C /* UserModelTests.swift */; };
+		D34CB5751FB1EC990017186C /* ActivityModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34CB5741FB1EC990017186C /* ActivityModelTests.swift */; };
 		D37549CE1FAF9D650046B85A /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D37549CD1FAF9D650046B85A /* MainTabBar.storyboard */; };
 		D37549D31FAFA02D0046B85A /* TodoActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37549D21FAFA02D0046B85A /* TodoActivityViewController.swift */; };
 		D390C2E81FAFD8B8000445B2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D390C2E71FAFD8B8000445B2 /* HomeViewController.swift */; };
@@ -43,7 +43,6 @@
 		D3A35CA51FAE7FE400BA5BBE /* WaitingForAccountActiviationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A35CA41FAE7FE400BA5BBE /* WaitingForAccountActiviationViewController.swift */; };
 		D3A35CA71FAE980100BA5BBE /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A35CA61FAE980100BA5BBE /* NotificationsManager.swift */; };
 		D3DFB1A61FADEEC50073CB8E /* RegistrationInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DFB1A51FADEEC50073CB8E /* RegistrationInputTableViewCell.swift */; };
-		D3EE0F51806D5360F32AEB3B /* Pods_Activity_ActivityTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4103FC7832CE123CB899A7A /* Pods_Activity_ActivityTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +113,8 @@
 		D34742691FADC80B0055EFBF /* LandingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
 		D347426D1FADD6730055EFBF /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
 		D347426F1FADD9BC0055EFBF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		D34CB5721FB1E9BE0017186C /* UserModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelTests.swift; sourceTree = "<group>"; };
+		D34CB5741FB1EC990017186C /* ActivityModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModelTests.swift; sourceTree = "<group>"; };
 		D367D8221FAE09C700AA18DA /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D37549CD1FAF9D650046B85A /* MainTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
 		D37549D21FAFA02D0046B85A /* TodoActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoActivityViewController.swift; sourceTree = "<group>"; };
@@ -147,7 +148,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				102F1855C8CF46D802873F38 /* Pods_ActivityTests.framework in Frameworks */,
-				D3EE0F51806D5360F32AEB3B /* Pods_Activity_ActivityTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,8 +155,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				391880E33260A1BD15B6059B /* Pods_ActivityUITests.framework in Frameworks */,
-				59AD104A20A4CBFA0C4B9064 /* Pods_Activity_ActivityUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +251,8 @@
 			isa = PBXGroup;
 			children = (
 				D34742481FADC0F90055EFBF /* ActivityTests.swift */,
+				D34CB5721FB1E9BE0017186C /* UserModelTests.swift */,
+				D34CB5741FB1EC990017186C /* ActivityModelTests.swift */,
 				D347424A1FADC0F90055EFBF /* Info.plist */,
 			);
 			path = ActivityTests;
@@ -525,14 +525,9 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ActivityTests/Pods-ActivityTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Expecta/Expecta.framework",
-				"${BUILT_PRODUCTS_DIR}/Specta/Specta.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Expecta.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Specta.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -716,6 +711,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D34CB5731FB1E9BE0017186C /* UserModelTests.swift in Sources */,
+				D34CB5751FB1EC990017186C /* ActivityModelTests.swift in Sources */,
 				D34742491FADC0F90055EFBF /* ActivityTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

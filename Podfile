@@ -13,8 +13,7 @@ target 'Activity' do
     
   target 'ActivityTests' do
     inherit! :search_paths
-    pod 'Specta'
-    pod 'Expecta'
+
   end
 
   target 'ActivityUITests' do
