@@ -12,7 +12,11 @@ class TodoActivityViewController: UIViewController {
 
     //MARK: - Properties
     @IBOutlet weak var toDoTableView: UITableView!
-    var userActivites : [String : [Activity]]? // String key is activity type
+    
+    /**
+     NSDictionary : KEY is activity Type and VALUE is Activities Array of this type. example ["Daily" : [Activities] , "Weekly" : [Activities]]
+     */
+    var userActivites : [String : [Activity]]?
     
     //MARK: - View Life Cycle
     override func viewDidLoad() {

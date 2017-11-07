@@ -38,6 +38,15 @@ class DataBaseManager {
        RealmManager.sharedInstance.updateStateToUserAccountVerfication(user: user, Verified: Verified)
     }
     
+    /**
+     Check User Login Authorization.
+     
+     - Parameter userEmail:   The user email.
+     - Parameter password: The user password.
+     
+     
+     - Returns: Tuple - Bool true if your is exist with this user model And false if your is not exist not.
+     */
     func checkUserLoginAuthorizationWith (userEmail : String , password: String) -> (Bool , User?) {
         
         return RealmManager.sharedInstance.checkUserLoginAuthorizationWith(userEmail:userEmail, password:password)
@@ -52,6 +61,12 @@ class DataBaseManager {
         
         return RealmManager.sharedInstance.addActivityTo(userEmail: currentUser.email, activity: activity)
     }
+    
+    /**
+     Get LoggedIn User's Activites.
+     
+     - Returns: NSDictionary : KEY is activity Type and VALUE is Activities Array of this type. example ["Daily" : [Activities] , "Weekly" : [Activities]]
+     */
     
     func getLoggedInUserActivites() ->  [String : [Activity]]? {
         

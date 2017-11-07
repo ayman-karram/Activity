@@ -12,6 +12,14 @@ import UIKit
 class VaildationManager {
     
     //MARK: Registarion
+    
+    /**
+     Check if User Registarion Data Is Vaild.
+     
+     - Parameter registrationTableView: The registration Table View.
+     
+     - Returns: Tuple With - Bool true Data is vaild with empty error message And false if data is not vaild with error message.
+     */
     class func isUserRegistarionDataIsVaild(registrationTableView : UITableView) -> (Bool , String , User?) {
         
         var vaildationMessage = ""
@@ -65,6 +73,14 @@ class VaildationManager {
         return (false , vaildationMessage , nil)
     }
     
+    /**
+     Initiate User Model From Inputes Data.
+     
+     - Parameter registrationTableView: The registration Table View.
+     
+     - Returns: User Model of the registered user used by after check isUserRegistarionDataIsVaild.
+     */
+    
     class func initUserModelFromInputesData (registrationTableView : UITableView) -> User {
         
         let fistName = self.getTextInputStringFromTextFieldAt(tableView: registrationTableView, section: 0, row: 0)
@@ -80,6 +96,14 @@ class VaildationManager {
     }
     
     //MARK: Login
+    
+    /**
+     Check if User Registarion Data Is Vaild.
+     
+     - Parameter loginTableView: The login Table View.
+     
+     - Returns: Tuple With - Bool true Data is vaild and user exist with empty error message And false if data is not vaild or user not exist  with error message.
+     */
     class func isUserLoginDataIsVaild(loginTableView : UITableView) -> (Bool , String , User?) {
         
         var vaildationMessage = ""
@@ -133,6 +157,13 @@ class VaildationManager {
     
     
     //MARK: AddNewActivity
+    /**
+     Check if data that user added to add new activity is Vaild.
+     
+     - Parameter addActivityTableView: The add new activity Table View.
+     
+     - Returns: Tuple With - Bool true Data is vaild and with empty error message And false if data is not vaild with error message.
+     */
     class func isUserAddNewActivityDataIsVaild(addActivityTableView : UITableView) -> (Bool , String , Activity?) {
         
         var vaildationMessage = ""
@@ -176,6 +207,14 @@ class VaildationManager {
         
         return activity
     }
+    
+    /**
+     This function return the type of activity that user did choice to add new activity from the segment controller.
+     
+     - Parameter addActivityTableView: The add new activity Table View.
+     
+     - Returns: String  Type name.
+     */
     
    class func getSelectedActivityTypeFrom(addActivityTableView : UITableView) -> String {
         
@@ -239,6 +278,14 @@ class VaildationManager {
         }
     }
     
+    
+    /**
+     This function Help to get the value of textfield at cell.
+     
+     - Parameter tableView: The cell's table view.
+     
+     - Returns: String  TextField text value.
+     */
     
     class func getTextInputStringFromTextFieldAt (tableView : UITableView, section : Int , row : Int) -> String {
         

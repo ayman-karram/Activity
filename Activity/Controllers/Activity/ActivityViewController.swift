@@ -13,7 +13,10 @@ class ActivityViewController: UIViewController {
 
     //MARK: - Properties
     @IBOutlet weak var barChart: BarChartView!
-    var userActivites : [String : [Activity]]? // String key is activity type
+    /**
+     NSDictionary : KEY is activity Type and VALUE is Activities Array of this type. example ["Daily" : [Activities] , "Weekly" : [Activities]]
+     */
+    var userActivites : [String : [Activity]]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
