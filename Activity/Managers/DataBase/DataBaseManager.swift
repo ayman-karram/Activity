@@ -51,6 +51,10 @@ class DataBaseManager {
         
         return RealmManager.sharedInstance.checkUserLoginAuthorizationWith(userEmail:userEmail, password:password)
     }
+    
+    func checkIfUserExistedWith(email : String) -> Bool {
+        return RealmManager.sharedInstance.checkIfUserExistedWith(email:email)
+    }
 
     //MARK: - Activity
     func addActivityToCurrentLoggedUserWith (activity : Activity) -> Bool {

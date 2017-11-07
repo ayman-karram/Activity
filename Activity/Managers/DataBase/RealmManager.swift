@@ -63,6 +63,17 @@ class RealmManager {
         }
     }
     
+    func checkIfUserExistedWith(email : String) -> Bool {
+        let usersResult = realm.objects(User.self).filter("email = '\(email)'")
+        if usersResult.count > 0 {
+            return true
+        }
+        else
+        {
+            return false
+        }
+    }
+    
     //MARK: Activity
     func addActivityTo(userEmail : String , activity : Activity) -> Bool {
         
