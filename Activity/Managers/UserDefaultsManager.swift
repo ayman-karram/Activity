@@ -32,4 +32,10 @@ class UserDefaultsManager: NSObject {
         return UserDefaults.standard.string(forKey: Keys.loggedInUserEmail)
     }
     
+    class func removeAllUserDefault () {
+        UserDefaults.standard.removeObject(forKey: Keys.userDidLogin)
+        UserDefaults.standard.removeObject(forKey: Keys.loggedInUserEmail)
+
+    }
+    
 }
