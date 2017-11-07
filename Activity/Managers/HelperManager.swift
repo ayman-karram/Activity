@@ -37,7 +37,11 @@ class HelperManager {
         }
         
         if userLoggedIn {
-            let userEmail = UserDefaultsManager.getLoggedInUserEmail()!
+            
+            guard let userEmail = UserDefaultsManager.getLoggedInUserEmail() else {
+                return
+            }
+            
             let user = DataBaseManager.sharedInstance.getUserWith(userEmail: userEmail)!
             DataBaseManager.sharedInstance.setCurrentLoginUserWithUser(user: user)
             HelperManager.makeMainTabbarAsRootViewControllerToWindow()

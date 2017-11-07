@@ -43,6 +43,7 @@
 		D3A35CA51FAE7FE400BA5BBE /* WaitingForAccountActiviationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A35CA41FAE7FE400BA5BBE /* WaitingForAccountActiviationViewController.swift */; };
 		D3A35CA71FAE980100BA5BBE /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A35CA61FAE980100BA5BBE /* NotificationsManager.swift */; };
 		D3D3047C1FB2022E002A45DF /* VaildationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D3047B1FB2022E002A45DF /* VaildationManagerTests.swift */; };
+		D3D3047E1FB20622002A45DF /* UserDefaultManagerTestes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D3047D1FB20622002A45DF /* UserDefaultManagerTestes.swift */; };
 		D3DFB1A61FADEEC50073CB8E /* RegistrationInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DFB1A51FADEEC50073CB8E /* RegistrationInputTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -130,6 +131,7 @@
 		D3A35CA41FAE7FE400BA5BBE /* WaitingForAccountActiviationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingForAccountActiviationViewController.swift; sourceTree = "<group>"; };
 		D3A35CA61FAE980100BA5BBE /* NotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
 		D3D3047B1FB2022E002A45DF /* VaildationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaildationManagerTests.swift; sourceTree = "<group>"; };
+		D3D3047D1FB20622002A45DF /* UserDefaultManagerTestes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManagerTestes.swift; sourceTree = "<group>"; };
 		D3DF403D2F8C94F658A1C43C /* Pods-Activity-ActivityUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Activity-ActivityUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Activity-ActivityUITests/Pods-Activity-ActivityUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D3DFB1A51FADEEC50073CB8E /* RegistrationInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationInputTableViewCell.swift; sourceTree = "<group>"; };
 		F5CCFC5F89CC3C947DD83811 /* Pods-Activity-ActivityTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Activity-ActivityTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Activity-ActivityTests/Pods-Activity-ActivityTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 			children = (
 				D34CB5781FB1F4DF0017186C /* DataBaseManagerTestes.swift */,
 				D3D3047B1FB2022E002A45DF /* VaildationManagerTests.swift */,
+				D3D3047D1FB20622002A45DF /* UserDefaultManagerTestes.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -733,6 +736,7 @@
 				D3D3047C1FB2022E002A45DF /* VaildationManagerTests.swift in Sources */,
 				D34CB5791FB1F4DF0017186C /* DataBaseManagerTestes.swift in Sources */,
 				D34CB5731FB1E9BE0017186C /* UserModelTests.swift in Sources */,
+				D3D3047E1FB20622002A45DF /* UserDefaultManagerTestes.swift in Sources */,
 				D34CB5751FB1EC990017186C /* ActivityModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
