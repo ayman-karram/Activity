@@ -33,6 +33,7 @@ let EMAILORPASSWORDNOTCORRECT = "Email or password not correct"
 let ADDACTIVITYSUCCESSMESSAGE = "Your Activity has been added successfully!"
 let ADDACTIVITYFAILESSAGE = "Your Activity has been not added Sorry, Something went wrong."
 let LOGOUTCONFIRMATIONMESSAGE = "Are you sure you want to make Log out?."
+let USERWITHSAMEEMAILEXSISTE = "User with same email existed"
 
 //MARK: - Time and date
 let APPDATEFORMATE = "dd MMMM yyyy"

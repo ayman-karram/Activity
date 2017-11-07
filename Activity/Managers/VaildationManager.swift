@@ -26,6 +26,7 @@ class VaildationManager {
         var vaild = true
         var registrationCell : RegistrationInputTableViewCell?
         var indexPath : IndexPath?
+        var userEmail = ""
         
         // FistName
         indexPath = IndexPath(row: 0, section: 0)
@@ -45,14 +46,13 @@ class VaildationManager {
         // Email
         indexPath = IndexPath(row: 0, section: 1)
         registrationCell = registrationTableView.cellForRow(at: indexPath!) as? RegistrationInputTableViewCell
-        
-        let vaildateEmail = self.isEmailIsVaild(email : registrationCell!.inputValueTextField.text!)
+        userEmail = registrationCell!.inputValueTextField.text!
+        let vaildateEmail = self.isEmailIsVaild(email : userEmail)
         
         if vaildateEmail.0 == false {
             vaild = false
             vaildationMessage += "\n" + vaildateEmail.1
         }
-        
         
         // password
         indexPath = IndexPath(row: 1, section: 1)
@@ -60,9 +60,18 @@ class VaildationManager {
         
         let vaildatePassword = self.isPasswordIsVaild(password: registrationCell!.inputValueTextField.text!)
         
+        
         if vaildatePassword.0 == false {
             vaild = false
             vaildationMessage += "\n" + vaildatePassword.1
+        }
+        
+        
+        //Email not Existed
+        let emailExiste = DataBaseManager.sharedInstance.checkIfUserExistedWith(email: userEmail)
+        if emailExiste {
+            vaild = false
+            vaildationMessage +=  "\n" + USERWITHSAMEEMAILEXSISTE
         }
         
         if vaild {
