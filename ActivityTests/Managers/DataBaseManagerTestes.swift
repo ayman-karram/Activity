@@ -51,7 +51,7 @@ class DataBaseManagerTestes: XCTestCase {
         
         //Retrieve
         let userFromBD = DataBaseManager.sharedInstance.getUserWith(userEmail: "Joi@gmail.com")
-        XCTAssertEqual(userFromBD?.firstName , "Joi", "Expect that userFromBD?.firstName become Ayman")
+        XCTAssertEqual(userFromBD?.firstName , "Joi", "Expect that userFromBD?.firstName become Joi")
     }
     
     func testUpdateStateToUserAccountVerfication() {
@@ -66,7 +66,6 @@ class DataBaseManagerTestes: XCTestCase {
         
         XCTAssertTrue(user.isAccountVerified, "Expect that user.isAccountVerified become true")
     }
-    
     
     func testCheckUserLoginAuthorizationWithUserInDB() {
         
