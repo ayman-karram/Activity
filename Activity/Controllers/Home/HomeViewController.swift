@@ -18,6 +18,7 @@ class HomeViewController: UIViewController {
     //MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        addNotificationsObservers()
         getUserActivites()
     }
 
@@ -41,15 +42,18 @@ class HomeViewController: UIViewController {
 
         for activityTypeString in activitiesType {
             let activityCount = self.userActivites![activityTypeString]!.count
+            
             count.append(Double (activityCount))
         }
         
         var entries = [PieChartDataEntry]()
         for (index, value) in count.enumerated() {
             let entry = PieChartDataEntry()
+            if value != 0 {
             entry.y = value
             entry.label = activitiesType[index]
             entries.append( entry)
+            }
         }
         
         // 3. chart setup
@@ -70,7 +74,8 @@ class HomeViewController: UIViewController {
         chart.noDataText = ""
         chart.drawHoleEnabled = true
         chart.drawSlicesUnderHoleEnabled = true
-        
+        pieChartView.noDataText = ""
+
         // user interaction
         chart.isUserInteractionEnabled = true
         
@@ -80,8 +85,17 @@ class HomeViewController: UIViewController {
         chart.centerText = "Activites"
         chart.holeRadiusPercent = 0.2
         chart.transparentCircleColor = UIColor.clear
-        self.view.addSubview(chart)
         
+        self.view.addSubview(chart)
     }
 
+    //MARK: - Notifications Center
+    func addNotificationsObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.userDidAddNewActivity(notification:)), name: NSNotification.Name(rawValue: ADDEDNEWACTIVITYNOTIFICATIONNAME), object: nil)
+    }
+    
+    @objc func userDidAddNewActivity (notification : NSNotification) {
+        self.getUserActivites()
+    }
+    
 }

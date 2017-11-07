@@ -64,7 +64,7 @@ class AddNewActivityViewController: UIViewController {
     
     func showDatePickerView () {
         
-        DatePickerDialog().show("Activity Date", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", maximumDate:Date() as Date, datePickerMode: .date) {
+        DatePickerDialog().show("Activity Date", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", datePickerMode: .date) {
             (date) -> Void in
             if let dt = date {
                 let formatter = DateFormatter()

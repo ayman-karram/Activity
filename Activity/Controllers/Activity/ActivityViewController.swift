@@ -17,6 +17,7 @@ class ActivityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addNotificationsObservers()
         getUserActivites()
         // Do any additional setup after loading the view.
     }
@@ -50,7 +51,7 @@ class ActivityViewController: UIViewController {
         barChart.pinchZoomEnabled = true
         barChart.doubleTapToZoomEnabled = true
         barChart.highlighter = nil
-        
+        barChart.noDataText = ""
         
         // Initialize an array to store chart data entries (values; y axis)
         var salesEntries = [ChartDataEntry]()
@@ -82,5 +83,15 @@ class ActivityViewController: UIViewController {
         
         // Animation
         barChart.animate(yAxisDuration: 1.5, easingOption: .easeInOutQuart)
+    }
+    
+    
+    //MARK: - Notifications Center
+    func addNotificationsObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.userDidAddNewActivity(notification:)), name: NSNotification.Name(rawValue: ADDEDNEWACTIVITYNOTIFICATIONNAME), object: nil)
+    }
+    
+    @objc func userDidAddNewActivity (notification : NSNotification) {
+        self.getUserActivites()
     }
 }
