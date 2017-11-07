@@ -13,17 +13,20 @@ import RealmSwift
 
 class DataBaseManagerTestes: XCTestCase {
     
+    
     override func setUp() {
         super.setUp()
-        Realm.Configuration.defaultConfiguration.inMemoryIdentifier = self.name
         let realm = try! Realm()
         try! realm.write {
             realm.deleteAll()
         }
+        Realm.Configuration.defaultConfiguration.inMemoryIdentifier = self.name
+
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+
         super.tearDown()
     }
     
@@ -32,7 +35,7 @@ class DataBaseManagerTestes: XCTestCase {
         let user = User()
         user.firstName = "Ayman"
         firstDataBaseSingltonManager.currentLoginUser = user
-        
+
         let secondDataBaseManager = DataBaseManager.sharedInstance
         XCTAssertEqual(secondDataBaseManager.currentLoginUser?.firstName, "Ayman", "Expect that econdDataBaseManager.currentLoginUser?.firstName become Ayman")
     }
@@ -41,20 +44,21 @@ class DataBaseManagerTestes: XCTestCase {
         
         //Save
         let user = User()
-        user.firstName = "Ayman"
-        user.email = "ayman.karram@gmail.com"
+        user.firstName = "Joi"
+        user.email = "Joi@gmail.com"
+        
         DataBaseManager.sharedInstance.saveUser(user: user)
         
         //Retrieve
-        let userFromBD = DataBaseManager.sharedInstance.getUserWith(userEmail: "ayman.karram@gmail.com")
-        XCTAssertEqual(userFromBD?.firstName , "Ayman", "Expect that userFromBD?.firstName become Ayman")
+        let userFromBD = DataBaseManager.sharedInstance.getUserWith(userEmail: "Joi@gmail.com")
+        XCTAssertEqual(userFromBD?.firstName , "Joi", "Expect that userFromBD?.firstName become Ayman")
     }
     
     func testUpdateStateToUserAccountVerfication() {
         
         let user = User()
-        user.firstName = "Ayman"
-        user.email = "ayman.karram@gmail.com"
+        user.firstName = "Hassan"
+        user.email = "Hassan@gmail.com"
         
         XCTAssertFalse(user.isAccountVerified, "Expect that user.isAccountVerified default value is false")
         
@@ -63,24 +67,12 @@ class DataBaseManagerTestes: XCTestCase {
         XCTAssertTrue(user.isAccountVerified, "Expect that user.isAccountVerified become true")
     }
     
-    func testCheckUserLoginAuthorizationWithUserNotInDB() {
-        
-        let user = User()
-        user.firstName = "Ayman"
-        user.email = "ayman.karram@gmail.com"
-        user.password = "123456"
-        
-        let result = DataBaseManager.sharedInstance.checkUserLoginAuthorizationWith(userEmail: user.email, password: user.password)
-        
-        XCTAssertFalse(result.0, "Expect that result is false")
-        
-    }
     
     func testCheckUserLoginAuthorizationWithUserInDB() {
         
         let user = User()
-        user.firstName = "Ayman"
-        user.email = "ayman.karram@gmail.com"
+        user.firstName = "Mo"
+        user.email = "Mo@gmail.com"
         user.password = "123456"
         
         DataBaseManager.sharedInstance.saveUser(user: user)
@@ -88,7 +80,7 @@ class DataBaseManagerTestes: XCTestCase {
         let result = DataBaseManager.sharedInstance.checkUserLoginAuthorizationWith(userEmail: user.email, password: user.password)
         
         XCTAssertTrue(result.0, "Expect that result is true")
-        XCTAssertEqual(result.1!.firstName , "Ayman", "Expect that userFromBD?.firstName become Ayman")
+        XCTAssertEqual(result.1!.firstName , "Mo", "Expect that userFromBD?.firstName become Mo")
         
     }
     
@@ -96,7 +88,7 @@ class DataBaseManagerTestes: XCTestCase {
         
         let user = User()
         user.firstName = "Ayman"
-        user.email = "Ayman.karram@gmail.com"
+        user.email = "Ayman@gmail.com"
         
         let activity = Activity()
         activity.name = "Play Football"
@@ -113,7 +105,7 @@ class DataBaseManagerTestes: XCTestCase {
     
     func testGetLoggedInUserActivites () {
         
-        self.testAddActivityToCurrentLoggedUser()
+       self.testAddActivityToCurrentLoggedUser()
         
         // Add Another activity to the user with diffrent type
         
